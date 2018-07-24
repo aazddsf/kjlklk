@@ -33,7 +33,7 @@ client.on('ready', () => {
 
 client.on('message', msg => {
   if (msg.content === 'hello') {
-    msg.reply('hi!');
+    msg.reply('hii!');
   }
 });
 
