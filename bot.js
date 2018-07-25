@@ -1380,5 +1380,45 @@ client.on("guildMemberAdd", member => {
                request(uri).pipe(fs.createWriteStream(filename)).on('close', callback);
            });
        };
-       
+   
+
+
+
+
+
+
+
+
+client.on("message", message => {
+ if (message.content === "*music") {
+        message.react("📫")
+	           message.react("✅")
+  const embed = new Discord.RichEmbed() 
+      .setColor("#8325c0")
+      .setThumbnail(message.author.avatarURL)
+      .setDescription(`
+اوامـــر الموسيقى
+⤠ *play ⥨ لتشغيل اغنية
+⤠ *skip ⥨ لتجاوز الاغنية الحالية
+⤠ *pause ⥨ لايقاف الاغنية
+⤠ *resume ⥨ لامواصلة الاغنية
+⤠ *vol ⥨ لتغيير درجة الصوت 100 - 0
+⤠ *stop ⥨ لاخراج البوت من رومك
+⤠ *join ⥨ لادخال البوت الى رومك الصوتي
+`)
+
+
+message.author.sendEmbed(embed)
+
+
+
+}
+});
+
+
+
+
+
+
+
 client.login(process.env.BOT_TOKEN);
