@@ -1421,7 +1421,7 @@ message.author.sendEmbed(embed)
 client.on('message', message => {
     var name1 = message.mentions.users.first();
     var reason = message.content.split(' ').slice(2).join(' ');
-    if(message.content.startsWith(prefix + 'report')) {
+    if(message.content.startsWith(^^ + 'report')) {
         if(message.author.bot) return;
         if(!message.guild.channels.find('name', '⭐report')) return message.channel.send('**الرجاء صنع روم باسم (⭐report) لارسال الريبورتات اليه**').then(msg => msg.delete(5000));
     if(!name1) return message.reply('**منشن اسم الشخص الي تبي تبلغ عليه**').then(msg => msg.delete(3000))
@@ -1460,7 +1460,7 @@ client.on("guildMemberAdd", member => {
 
 
 client.on('message', message => {
-    var prefix = "-"
+    var prefix = "^^"
   if (message.author.x5bz) return;
   if (!message.content.startsWith(prefix)) return;
 
