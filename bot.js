@@ -1,10 +1,10 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
-const prefix = '^^'
+const prefix = '^'
 
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
-client.user.setGame(`Nothing`,"http://twitch.tv/S-F")
+client.user.setGame(`^^help ^^invite`,"http://twitch.tv/S-F")
   console.log('')
   console.log('')
   console.log('╔[═════════════════════════════════════════════════════════════════]╗')
@@ -1254,14 +1254,16 @@ client.on("guildMemberRemove", function(member) {
         return wc.sendEmbed(embed);
 });
 
-
 client.on("guildMemberAdd", member => {
-    member.createDM().then(function (channel) {
-    return channel.send(`:rose:  ولكم نورت السيرفر:rose: 
-  :crown:اسم العضو  ${member}:crown:  
-  انت العضو رقم ${member.guild.memberCount} `) 
-  }).catch(console.error)
-  });
+  member.createDM().then(function (channel) {
+  return channel.send(`:rose:  ولكم نورت السيرفر:rose: 
+:crown:اسم العضو  ${member}:crown:  
+:bust_in_silhouette: انت العضو رقم ${member.guild.memberCount}:bust_in_silhouette: 
+:checkered_flag: تاريخ انضمامك للسيرفر ${member.joinedAt.toLocaleString()} :checkered_flag:`) 
+}).catch(console.error)
+})
+
+
 
   client.on('guildMemberAdd', member => {
     let channel = member.guild.channels.find('name', 'welcomee');
@@ -1505,7 +1507,23 @@ client.on('message', message => {
 
 
 
-
+client.on("guildMemberAdd", member => {
+let welcomer = member.guild.channels.find("name","welcome");
+      if(!welcomer) return;
+      if(welcomer) {
+         moment.locale('ar-ly');
+         var h = member.user;
+        let norelden = new Discord.RichEmbed()
+        .setColor('RANDOM')
+        .setThumbnail(h.avatarURL)
+        .setAuthor(h.username,h.avatarURL)
+        .addField(': تاريخ دخولك الدسكورد',`${moment(member.user.createdAt).format('D/M/YYYY h:mm a')} **\n** \`${moment(member.user.createdAt).fromNow()}\``,true)
+         .setFooter(`${h.tag}`,"https://images-ext-2.discordapp.net/external/JpyzxW2wMRG2874gSTdNTpC_q9AHl8x8V4SMmtRtlVk/https/orcid.org/sites/default/files/files/ID_symbol_B-W_128x128.gif")
+     welcomer.send({embed:norelden});          
+               
+ 
+      }
+      });
  
 
 
