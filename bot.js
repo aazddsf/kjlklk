@@ -855,14 +855,14 @@ client.on("message", message => {
  client.on('guildMemberAdd', member => {
   const channel = member.guild.channels.find('name', 'welcome');
   if (!channel) return;
-  channel.send(`***بكل حب واحترام وشوق نستقبلك ونتمنى لك قضآء أجمل اللحظات ولآوقات معنا حياك الله***, ${member}`);
+  channel.send(`***WELOME DUDE***, ${member}`);
   
 });
 
 client.on('message', message => {
   if (true) {
 if (message.content === '^^support') {
-      message.author.send(' |https://discord.gg/uFYf4K| لـ أي استفسار').catch(e => console.log(e.stack));
+      message.author.send(' |https://discord.gg/zB9F4Vy| لـ أي استفسار').catch(e => console.log(e.stack));
 
     }
    } 
@@ -1232,7 +1232,7 @@ client.on('message', message => {
 
 
 client.on("guildMemberAdd", function(member) {
-     wc = member.guild.channels.find("name", "welcome")
+     wc = member.guild.channels.find("name", "welcomee")
          embed = new Discord.RichEmbed()
         .setColor('00FF01')
         .setAuthor(member.user.tag, member.user.avatarURL)
@@ -1242,7 +1242,7 @@ client.on("guildMemberAdd", function(member) {
 });
 
 client.on("guildMemberRemove", function(member) {
-     wc = member.guild.channels.find("name", "welcome")
+     wc = member.guild.channels.find("name", "welcomee")
          embed = new Discord.RichEmbed()
         .setColor('FF0000')
         .setAuthor(member.user.tag, member.user.avatarURL)
@@ -1261,7 +1261,7 @@ client.on("guildMemberAdd", member => {
   });
 
   client.on('guildMemberAdd', member => {
-    let channel = member.guild.channels.find('name', 'welcome');
+    let channel = member.guild.channels.find('name', 'welcomee');
     let memberavatar = member.user.avatarURL
       if (!channel) return;
     let embed = new Discord.RichEmbed()
