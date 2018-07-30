@@ -856,7 +856,7 @@ client.on("message", message => {
 
 
  client.on('guildMemberAdd', member => {
-  const channel = member.guild.channels.find('name', 'welcome');
+  const channel = member.guild.channels.find('name', '⭐welcome');
   if (!channel) return;
   channel.send(`***WELOME DUDE***, ${member}`);
   
@@ -890,7 +890,7 @@ client.on('message', message => {
 client.on('message', message => {
   if (true) {
 if (message.content === '^^invite') {
-      message.author.send(' رابط البوت |  https://discordapp.com/oauth2/authorize?client_id=471026336123715584&permissions=0&scope=bot ').catch(e => console.log(e.stack));
+      message.author.send(' رابط البوت |  https://discordapp.com/oauth2/authorize?client_id=471026336123715584&permissions=8&scope=bot ').catch(e => console.log(e.stack));
 
     }
    } 
