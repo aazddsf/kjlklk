@@ -41,7 +41,7 @@ client.on('message', msg => {
 });
 
 client.on('ready',  () => {
-  console.log('By :  ZinoDzYT#7947 ');
+  console.log('By :  @ZinoDzYT#7947 ');
   console.log(`Logged in as * [ " ${client.user.username} " ] servers! [ " ${client.guilds.size} " ]`);
   console.log(`Logged in as * [ " ${client.user.username} " ] Users! [ " ${client.users.size} " ]`);
   console.log(`Logged in as * [ " ${client.user.username} " ] channels! [ " ${client.channels.size} " ]`);
@@ -56,17 +56,17 @@ client.on("message", message => {
    message.react("😜")
   const embed = new Discord.RichEmbed()
       .setColor("RANDOM")
-      .addField("『THE KING BOT』 『THE KING BOT』", true)
+      .addField("『THE KING BOT』 『THE KING BOT』", )
       
-      .addField("@ZinoDzYT#6067", true)
+      .addField("@ZinoDzYT#7947", )
+     
+      .addField("『^help^』😘『اذا تبي جميع الاوامر مع اوامر اضافية』😵", )
       
-      .addField("『^help^』😘『اذا تبي جميع الاوامر مع اوامر اضافية』😵", true)
-      
-	    .addField("『^help^^』👻『اذا تبي الاوامر العامة』😳", true)
+	    .addField("『^help^^』👻『اذا تبي الاوامر العامة』😳", )
 	    
-      .addField("『^help^^^』😮『اذا تبي  الاوامر الادارية』🤒", true)
+      .addField("『^help^^^』😮『اذا تبي  الاوامر الادارية』🤒", )
       
-      .addField("『🤑』『قريبا سوف نضيف المزيد و المزيد من الاوامر 』『😉』", true)
+      .addField("『🤑』『قريبا سوف نضيف المزيد و المزيد من الاوامر 』『😉』", )
       
   message.channel.sendMessage({embed});
 
