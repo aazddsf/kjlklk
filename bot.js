@@ -1333,58 +1333,15 @@ client.on("guildMemberAdd", member => {
        });
 
       
-        yt = require('ytdl-core');
-        ytdl = require('ytdl-core');
-        request = require('request');
-        getYoutubeID = require('get-youtube-id');
-        fetchVideoInfo = require('youtube-info');
-        fs = require("fs");
-        yt_api_key = "AIzaSyDeoIH0u1e72AtfpwSKKOSy3IPp2UHzqi4";//لا تغيره
-       
-       
-       client.on('ready', function() {
-           console.log(`i am ready ${client.user.username}`);
-       });
+        
        
        
        
        
        
+client.login(process.env.BOT_TOKEN);      
        
-       
-       
-       /*
-       ////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\
-       ////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\
-       ////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\
-       ////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\
-       */
-       var servers = [];
-       var queue = [];
-       var guilds = [];
-       var queueNames = [];
-       var isPlaying = false;
-       var dispatcher = null;
-       var voiceChannel = null;
-       var skipReq = 0;
-       var skippers = [];
-       var now_playing = [];
-       /*
-       \\\\\\\\\\\\\\\\\\\\\\\\/////////////////////////
-       \\\\\\\\\\\\\\\\\\\\\\\\/////////////////////////
-       \\\\\\\\\\\\\\\\\\\\\\\\/////////////////////////
-       \\\\\\\\\\\\\\\\\\\\\\\\/////////////////////////
-       */
-       client.on('ready', () => {});
-       console.log("Logged")
-       var download = function(uri, filename, callback) {
-           request.head(uri, function(err, res, body) {
-               console.log('content-type:', res.headers['content-type']);
-               console.log('content-length:', res.headers['content-length']);
-       
-               request(uri).pipe(fs.createWriteStream(filename)).on('close', callback);
-           });
-       };
+   
    
 
 
@@ -1394,65 +1351,6 @@ client.on("guildMemberAdd", member => {
 
 
 
-client.on("message", message => {
- if (message.content === "*music") {
-        message.react("📫")
-	           message.react("✅")
-  const embed = new Discord.RichEmbed() 
-      .setColor("#8325c0")
-      .setThumbnail(message.author.avatarURL)
-      .setDescription(`
-اوامـــر الموسيقى
-⤠ -play ⥨ لتشغيل اغنية
-⤠ -skip ⥨ لتجاوز الاغنية الحالية
-⤠ -pause ⥨ لايقاف الاغنية
-⤠ -resume ⥨ لامواصلة الاغنية
-⤠ -vol ⥨ لتغيير درجة الصوت 100 - 0
-⤠ -stop ⥨ لاخراج البوت من رومك
-⤠ -join ⥨ لادخال البوت الى رومك الصوتي
-`)
-
-
-message.author.sendEmbed(embed)
-
-
-
-}
-});
-
-client.on('message', message => {
-    var name1 = message.mentions.users.first();
-    var reason = message.content.split(' ').slice(2).join(' ');
-    if(message.content.startsWith(prefix + 'report')) {
-        if(message.author.bot) return;
-        if(!message.guild.channels.find('name', '⭐report')) return message.channel.send('**الرجاء صنع روم باسم (⭐report) لارسال الريبورتات اليه**').then(msg => msg.delete(5000));
-    if(!name1) return message.reply('**منشن اسم الشخص الي تبي تبلغ عليه**').then(msg => msg.delete(3000))
-        message.delete();
-    if(!reason) return message.reply('**اكتب وش سوى**').then(msg => msg.delete(3000))
-        message.delete();
-    var abod = new Discord.RichEmbed()
-    .setTitle(`:page_with_curl: **[REPORT]** By: ${message.author.tag}`)
-    .addField('**Report For:**', `${name1}`, true)
-    .addField('**In Channel:**', `${message.channel.name}`, true)
-    .addField('**Reason:**', `${reason}`, true)
-    .setFooter(`${message.author.username}#${message.author.discriminator}`, message.author.avatarURL)
-    .setTimestamp()
-        message.guild.channels.find('name', '⭐report').sendEmbed(abod)
-    message.reply('**شكرا على تبليغك**').then(msg => msg.delete(3000));
-    }
-});
-
-
-
-
-
-client.on("guildMemberAdd", member => {
-  member.createDM().then(function (channel) {
-  return channel.send(`:rose:  ولكم نورت السيرفر:rose: 
-:crown:اسم العضو  ${member}:crown:  
-انت العضو رقم ${member.guild.memberCount} `) 
-}).catch(console.error)
-});
 
 
 
@@ -1461,42 +1359,16 @@ client.on("guildMemberAdd", member => {
 
 
 
-client.on('message', message => {
-    var prefix = "^^"
-  if (message.author.x5bz) return;
-  if (!message.content.startsWith(prefix)) return;
 
-  let command = message.content.split(" ")[0];
-  command = command.slice(prefix.length);
 
-  let args = message.content.split(" ").slice(1);
 
-  if (command == "kick") {
-               if(!message.channel.guild) return message.reply('** This command only for servers**');
-         
-  if(!message.guild.member(message.author).hasPermission("KICK_MEMBERS")) return message.reply("**You Don't Have ` KICK_MEMBERS ` Permission**");
-  if(!message.guild.member(client.user).hasPermission("KICK_MEMBERS")) return message.reply("**I Don't Have ` KICK_MEMBERS ` Permission**");
-  let user = message.mentions.users.first();
-  let reason = message.content.split(" ").slice(2).join(" ");
-  if (message.mentions.users.size < 1) return message.reply("**منشن شخص**");
-  if(!reason) return message.reply ("**اكتب سبب الطرد**");
-  if (!message.guild.member(user)
-  .kickable) return message.reply("**لايمكنني طرد شخص اعلى من رتبتي يرجه اعطاء البوت رتبه عالي**");
 
-  message.guild.member(user).kick();
 
-  const kickembed = new Discord.RichEmbed()
-  .setAuthor(`KICKED!`, user.displayAvatarURL)
-  .setColor("RANDOM")
-  .setTimestamp()
-  .addField("**User:**",  '**[ ' + `${user.tag}` + ' ]**')
-  .addField("**By:**", '**[ ' + `${message.author.tag}` + ' ]**')
-  .addField("**Reason:**", '**[ ' + `${reason}` + ' ]**')
-  message.channel.send({
-    embed : kickembed
-  })
-}
-});
+
+
+
+
+
 
 
 
@@ -1522,4 +1394,4 @@ client.on('message', message => {
 
 
 
-client.login(process.env.BOT_TOKEN);
+
