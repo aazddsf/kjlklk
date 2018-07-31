@@ -1329,19 +1329,6 @@ client.on("guildMemberRemove", function(member) {
        
        
        
- client.on('guildMemberAdd', member => {
-    const botCount = member.guild.members.filter(m=>m.user.bot).size
-    const memberCount = [member.guild.memberCount] - [botCount]
-    client.channels.get('473699325227171840').setName(`⟫『 ${memberCount} عدد الاعضاء 』⟪`);
-    client.channels.get('473699519666847765').setName(`⟫『 ${botCount} عدد البوتات 』⟪`);
-});
-
-client.on('guildMemberRemove', member => {
-    const botCount = member.guild.members.filter(m=>m.user.bot).size
-    const memberCount = [member.guild.memberCount] - [botCount]
-    client.channels.get('473699325227171840').setName(`⟫『 ${memberCount} عدد الاعضاء 』⟪`);
-    client.channels.get('473699519666847765').setName(`⟫『 ${botCount} عدد البوتات 』⟪`);
-});
 
 
 
