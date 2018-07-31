@@ -553,14 +553,14 @@ client.on('message', message => {
   let args = message.content.split(" ").slice(1);
 
 // ^^say
-  if (command === "say") {
+  if (command === "^^say") {
           message.delete()
     message.channel.sendMessage(args.join(" ")).catch(console.error);
   }
   
  
 
-if (command == "embed") {
+if (command == "^^embed") {
     let say = new Discord.RichEmbed()
     .setDescription(args.join("  "))
     .setColor(0x23b2d6)
@@ -745,7 +745,7 @@ client.on('message', message => {
   
   const HeRo = new Discord.Client();
   client.on('message', message => {
-      if (message.content === prefix + "date") {
+      if (message.content === ^^ + "date") {
           if (!message.channel.guild) return message.reply('** This command only for servers **');  
           var currentTime = new Date(),
               Year = currentTime.getFullYear(),
@@ -858,9 +858,9 @@ client.on("message", message => {
 
 
  client.on('guildMemberAdd', member => {
-  const channel = member.guild.channels.find('name', '⭐welcome');
+  const channel = member.guild.channels.find('name','welcome');
   if (!channel) return;
-  channel.send(`***WELOME DUDE***, ${member}`);
+  channel.send(`***Welcome To The Server :heart: ***, ${member}`);
   
 });
 
@@ -1247,7 +1247,7 @@ client.on("guildMemberAdd", function(member) {
 });
 
 client.on("guildMemberRemove", function(member) {
-     wc = member.guild.channels.find("name", "welcomee")
+     wc = member.guild.channels.find("name", "welcome")
          embed = new Discord.RichEmbed()
         .setColor('FF0000')
         .setAuthor(member.user.tag, member.user.avatarURL)
@@ -1256,19 +1256,11 @@ client.on("guildMemberRemove", function(member) {
         return wc.sendEmbed(embed);
 });
 
-client.on("guildMemberAdd", member => {
-  member.createDM().then(function (channel) {
-  return channel.send(`:rose:  ولكم نورت السيرفر:rose: 
-:crown:اسم العضو  ${member}:crown:  
-:bust_in_silhouette: انت العضو رقم ${member.guild.memberCount}:bust_in_silhouette: 
-:checkered_flag: تاريخ انضمامك للسيرفر ${member.joinedAt.toLocaleString()} :checkered_flag:`) 
-}).catch(console.error)
-})
 
 
 
   client.on('guildMemberAdd', member => {
-    let channel = member.guild.channels.find('name', 'welcomee');
+    let channel = member.guild.channels.find('name', 'welcome');
     let memberavatar = member.user.avatarURL
       if (!channel) return;
     let embed = new Discord.RichEmbed()
