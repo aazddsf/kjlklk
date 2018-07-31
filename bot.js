@@ -459,9 +459,6 @@ client.on("message", message => {
 
 💎^^say 『لي يكرر الكلام الذي تقوله』
 
-💎^^animal  『كود لي اضهار صور  للحيوانات』
-
-
 ● ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ ● 
 	  
 
@@ -839,7 +836,7 @@ client.on("message", message => {
             if (message.content.startsWith(prefix + "clear")) {
  if (!args[1]) {
                                 let x5bz1 = new Discord.RichEmbed()
-                                .setDescription("-clear <number>")
+                                .setDescription("^^clear <number>")
                                 .setColor("#0000FF")
                                 message.channel.sendEmbed(x5bz1);
                             } else {
@@ -858,7 +855,7 @@ client.on("message", message => {
 
 
  client.on('guildMemberAdd', member => {
-  const channel = member.guild.channels.find('name','welcome');
+  const channel = member.guild.channels.find('name', 'welcome');
   if (!channel) return;
   channel.send(`***Welcome To The Server :heart: ***, ${member}`);
   
