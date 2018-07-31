@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
-const prefix = '^'
+const prefix = '.'
 
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
@@ -60,13 +60,13 @@ client.on("message", message => {
       
       .addField("@ZinoDzYT#7947", )
      
-      .addField("『^help^』😘『اذا تبي جميع الاوامر مع اوامر اضافية』😵", )
+      .addField("『^help^』😘『اذا تبي جميع الاوامر مع اوامر اضافية』😵",_ )
       
-	    .addField("『^help^^』👻『اذا تبي الاوامر العامة』😳", )
+	    .addField("『^help^^』👻『اذا تبي الاوامر العامة』😳",_ )
 	    
-      .addField("『^help^^^』😮『اذا تبي  الاوامر الادارية』🤒", )
+      .addField("『^help^^^』😮『اذا تبي  الاوامر الادارية』🤒",_ )
       
-      .addField("『🤑』『قريبا سوف نضيف المزيد و المزيد من الاوامر 』『😉』", )
+      .addField("『🤑』『قريبا سوف نضيف المزيد و المزيد من الاوامر 』『😉』",_ )
       
   message.channel.sendMessage({embed});
 
@@ -1338,7 +1338,98 @@ client.on("guildMemberAdd", member => {
        
        
        
-       
+ client.on('guildMemberAdd', member => {
+    const botCount = member.guild.members.filter(m=>m.user.bot).size
+    const memberCount = [member.guild.memberCount] - [botCount]
+    client.channels.get('473699325227171840').setName(`⟫『 ${memberCount} عدد الاعضاء 』⟪`);
+    client.channels.get('473699519666847765').setName(`⟫『 ${botCount} عدد البوتات 』⟪`);
+});
+
+client.on('guildMemberRemove', member => {
+    const botCount = member.guild.members.filter(m=>m.user.bot).size
+    const memberCount = [member.guild.memberCount] - [botCount]
+    client.channels.get('473699325227171840').setName(`⟫『 ${memberCount} عدد الاعضاء 』⟪`);
+    client.channels.get('473699519666847765').setName(`⟫『 ${botCount} عدد البوتات 』⟪`);
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 client.login(process.env.BOT_TOKEN);      
        
    
