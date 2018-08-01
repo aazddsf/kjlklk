@@ -1464,7 +1464,13 @@ client.on('message', message => {
 
 
 
-
+client.on('message', message => {
+    var args = message.content.split(/[ ]+/)
+    if(message.content.includes('كل زق' ,'تفو عليك' ,'يا معفن' ,'يابن الكلب ')){
+        message.delete()
+    return message.reply(`** عيب عليك لا تسب ! **`)
+    }
+});
 
 
 
