@@ -1416,7 +1416,7 @@ const secre = [
 
 client.on('ready', function(){
     var ms = 1000 ;
-    var setGame = [`^^h `,` ^^he`,`^^hel`,`^^help`];
+    var setGame = [`^^he `,` ^^hel`,`^^help ^^invite];
     var i = -1;
     var j = 0;
     setInterval(function (){
