@@ -34,10 +34,16 @@ client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
 });
 
-client.on('message', msg => {
-  if (msg.content === 'هلا') {
-    msg.reply('ولكم!');
-  }
+client.on('ready', () = {
+  console.log(`Logged in as ${client.user.tag}!`);
+});
+         client.on('message', message = {
+            if (message.content === 'هلا') {
+              message.channel.send('هلا بيك :heart:');
+              message.channel.sendFile(.Photo.PNG);
+               
+
+            }
 });
 
 client.on('ready',  () => {
