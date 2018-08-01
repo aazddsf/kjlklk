@@ -35,8 +35,8 @@ client.on('ready', () => {
 });
 
 client.on('message', msg => {
-  if (msg.content === 'hello') {
-    msg.reply('hii!');
+  if (msg.content === 'هلا') {
+    msg.reply('ولكم!');
   }
 });
 
