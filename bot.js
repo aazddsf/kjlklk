@@ -34,17 +34,12 @@ client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
 });
 
-
-  console.log(`Logged in as ${client.user.tag}!`);
+client.on('message', msg => {
+  if (msg.content === 'هلا') {
+    msg.reply('هلا بيك');
+  }
 });
-         client.on('message', message = {
-            if (message.content === 'هلا') {
-              message.channel.send('هلا بيك :heart:');
-              message.channel.sendFile(.Photo.PNG);
-               
-
-            }
-});
+ 
 
 client.on('ready',  () => {
   console.log('By :  @ZinoDzYT#7947 ');
