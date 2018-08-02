@@ -1234,15 +1234,7 @@ client.on("guildMemberAdd", function(member) {
         return wc.sendEmbed(embed);
 });
 
-client.on("guildMemberRemove", function(member) {
-     wc = member.guild.channels.find("name", "welcome")
-         embed = new Discord.RichEmbed()
-        .setColor('FF0000')
-        .setAuthor(member.user.tag, member.user.avatarURL)
-        .setFooter("خرج عضو انشالله يكون استمتع معنا ")
-        .setTimestamp()
-       
-});
+
 
 
 
