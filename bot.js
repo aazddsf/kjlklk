@@ -1241,7 +1241,7 @@ client.on("guildMemberRemove", function(member) {
         .setAuthor(member.user.tag, member.user.avatarURL)
         .setFooter("خرج عضو انشالله يكون استمتع معنا ")
         .setTimestamp()
-        return wc.sendEmbed(embed);
+       
 });
 
 
