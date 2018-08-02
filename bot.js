@@ -3,10 +3,29 @@ const client = new Discord.Client();
 const prefix = '.'
 
 client.on('ready', () => {
-  client.user.setGame(`on 150 servers | ^^help ^^invite| ɾOG字ɹ ZinoDzYT#7947 .`,'https://www.twitch.tv/v5bz');
-  console.log('---------------');
+  console.log(`Logged in as ${client.user.tag}!`);
+client.user.setGame(`^^help ^^invite`,"http://twitch.tv/S-F")
+  console.log('')
+  console.log('')
+  console.log('╔[═════════════════════════════════════════════════════════════════]╗')
+  console.log(`[Start] ${new Date()}`);
+  console.log('╚[═════════════════════════════════════════════════════════════════]╝')
+  console.log('')
+  console.log('╔[════════════════════════════════════]╗');
+  console.log(`Logged in as * [ " ${client.user.username} " ]`);
+  console.log('')
+  console.log('Informations :')
+  console.log('')
+  console.log(`servers! [ " ${client.guilds.size} " ]`);
+  console.log(`Users! [ " ${client.users.size} " ]`);
+  console.log(`channels! [ " ${client.channels.size} " ]`);
+  console.log('╚[════════════════════════════════════]╝')
+  console.log('')
+  console.log('╔[════════════]╗')
   console.log(' Bot Is Online')
-  console.log('---------------')
+  console.log('╚[════════════]╝')
+  console.log('')
+  console.log('')
 });
 client.login(process.env.BOT_TOKEN);
 
