@@ -101,10 +101,7 @@ client.on('message', message => {
 });
 
 
-console.log('mariam ra7t tmot al nas');
-client.on('ready', () => {
-  console.log(`im redey`);
-});
+
 const zead = [
    '*** انا اسمي مريم ***',
    '*** مرحباَ ماهو اسمك ؟ ***',
