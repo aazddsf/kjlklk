@@ -1523,7 +1523,7 @@ var title = args[1]
           if(message.content.startsWith(codes + "start")) {
               if(!message.guild.member(message.author).hasPermission('MANAGE_GUILD')) return message.channel.send(':heavy_multiplication_x:| **s You Dont Have Premission**');
               if(!args) return message.channel.send(`**Use : $start  <Time> <Presentse>**`);
-              if(!title) return message.channel.send(`**Use : **\`$start ${args[0]} Minutes\`** <Presentse>**`);
+              if(!title) return message.channel.send(`**Use : **\`^^start ${args[0]} Minutes\`** <Presentse>**`);
          if(!isNaN(args)) return message.channel.send(':heavy_multiplication_x:| **The Time Be Nambers `` Do the Commend Agin``**');
                            let giveEmbed = new Discord.RichEmbed()
                   .setAuthor(message.guild.name, message.guild.iconURL)
