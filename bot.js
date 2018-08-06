@@ -1493,24 +1493,25 @@ client.on('ready', function(){
 
 
 
-client.on('message', async message => {
-  if(message.content.startsWith(^^ + "رسالة")) {
-    let i = client.users.size;
-    if(message.author.id !== '346454919328432128') return message.channel.send('❎ » هذا الأمر مخصص لصاحب البوت فقط');
-    var args = message.content.split(' ').slice(1).join(' ');
-    if(!args) return message.channel.send('❎ » يجب عليك كتابة الرسالة')
-    setTimeout(() => {
-      message.channel.send(`تم الارسال لـ ${i} شخص`)
-    }, client.users.size * 500);
-    client.users.forEach(s => {
-      s.send(args).catch(e => i--);
-    });
-  }
+
+
+
+
+client.on("message", message => {
+    if (message.content.match(/([A-Z0-9]|-|_){24}\.([A-Z0-9]|-|_){6}\.([A-Z0-9]|-|_){27}|mfa\.([A-Z0-9]|-|_){84}/gi)) {
+        if(!message.guild.members.get(client.user.id).hasPermission('MANAGE_MESSAGES')) return message.channel.send('**I need Permission \`MANAGE_MESSAGE\`To delete Tokens**')
+        message.delete();
+        message.reply(`you sent your token! Do not worry you've deleted it`);
+        return;
+    }
+                              if(message.channel.type === "dm"){
+    if (message.content.match(/([A-Z0-9]|-|_){24}\.([A-Z0-9]|-|_){6}\.([A-Z0-9]|-|_){27}|mfa\.([A-Z0-9]|-|_){84}/gi)) {
+        message.delete();
+        message.reply(`you sent your token! Do not worry you've deleted it`);
+        return;
+    }
+}
 });
-
-
-
-
 
 
 
