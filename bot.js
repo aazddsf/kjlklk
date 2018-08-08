@@ -106,27 +106,7 @@ message.author.sendEmbed(embed)
 });
 
 
-     client.users.get("244888652004458497").send(
-    "\n" + "**" + "● السيرفر :" + "**" +
-    "\n" + "**" + "» " + message.guild.name + "**" +
-    "\n" + "**" + " ● المرسل : " + "**" +
-    "\n" + "**" + "» " + message.author.tag + "**" +
-    "\n" + "**" + " ● الرسالة : " + "**" +
-    "\n" + "**" + args + "**")
-
-let embed = new Discord.RichEmbed()
-     .setAuthor(message.author.username, message.author.avatarURL)
-     .setDescription(':mailbox_with_mail: تم ارسال الرسالة الى صاحب البوت بنجاح')
-     .setThumbnail(message.author.avatarURL)
-     .setFooter("By : ZinoDzYT#7947")
-                                                
-
-message.channel.send(embed);
-
-
-}
-    
-});                                           
+                  
 
  client.on("message", message => {
  if (message.content === "^admin^^") {
