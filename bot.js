@@ -56,7 +56,7 @@ client.on("message", message => {
    message.react("😜")
   const embed = new Discord.RichEmbed()
       .setColor("RANDOM")
-      .addField("『THE KING BOT』 『THE KING BOT』", )
+      .addField("『Gaming BOT』 『Gaming BOT』", )
       
       .addField("@ZinoDzYT#7947", )
       
@@ -1320,7 +1320,7 @@ client.on("message", message => {
         color: 0x06DF00,
         description: "تم مسح الرسائل بنجاح",
         footer: {
-          text: "The King |BOT|" // غير هنا حط اسم البوت
+          text: "Gaming |BOT|" // غير هنا حط اسم البوت
         }
       }}).then(msg => {msg.delete(3000)});
                           }
