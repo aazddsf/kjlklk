@@ -49,16 +49,16 @@ client.on('ready',  () => {
 
 
 client.on("message", message => {
-	var prefix = "^^";
- if (message.content === "^^help") {
+	var prefix = ".";
+ if (message.content === ".help") {
   const embed = new Discord.RichEmbed()  
       .setColor("#8325c0") 
       .setDescription(`
 	  
 	       Help Commands: 
 			 
-${prefix}^help^^ ⥨ الاوامر العامة
-${prefix}^help^^^ ⥨ اوامر الادارة
+${prefix}.help.. ⥨ الاوامر العامة
+${prefix}.help... ⥨ اوامر الادارة
 			 
  
 Other Commands:
@@ -78,25 +78,25 @@ ${prefix}support ⥨ لدخول سيرفر الدعم
 
 
 client.on('message', message => {
-   if (message.content === "^^roll 1") {
+   if (message.content === ".roll 1") {
   message.channel.sendMessage(Math.floor(Math.random() * 25));
     }
 });
  
 client.on('message', message => {
-   if (message.content === "^^roll 2") {
+   if (message.content === ".roll 2") {
   message.channel.sendMessage(Math.floor(Math.random() * 50));
     }
 });
  
 client.on('message', message => {
-   if (message.content === "^^roll 3") {
+   if (message.content === ".roll 3") {
   message.channel.sendMessage(Math.floor(Math.random() * 75));
     }
 });
  
 client.on('message', message => {
-   if (message.content === "^^roll 4") {
+   if (message.content === ".roll 4") {
   message.channel.sendMessage(Math.floor(Math.random() * 100));
     }
 });
@@ -152,7 +152,7 @@ const zead = [
    '*** انتظر الجزء الثاني عندما يوصل البوت 100 سيرفر , ساعدنا في نشر البوت وادخل هذا السيرفر  ***'
 ]
  client.on('message', message => {
- if (message.content.startsWith('^^مريم')) {
+ if (message.content.startsWith('.مريم')) {
   var mariam= new Discord.RichEmbed()
   .setTitle("لعبة مريم ..")
   .setColor('RANDOM')
@@ -196,7 +196,7 @@ const zead = [
 ]
 
  client.on('message', message => {
-   if (message.content.startsWith("^^كت تويت")) {
+   if (message.content.startsWith(".كت تويت")) {
                 if(!message.channel.guild) return message.reply('** This command only for servers**');
   var embed = new Discord.RichEmbed()
   .setColor('RANDOM')
@@ -224,7 +224,7 @@ const secreT = [
 
 
  client.on('message', message => {
-   if (message.content.startsWith("^^خواطر")) {
+   if (message.content.startsWith(".خواطر")) {
                 if(!message.channel.guild) return message.reply('** This command only for servers**');
   var embed = new Discord.RichEmbed()
   .setColor('RANDOM')
@@ -242,7 +242,7 @@ const secreT = [
 
 
 client.on("message", message => {
- if (message.content === "^help^") {
+ if (message.content === ".help.") {
         message.react("😘")
            message.react("😵")
   const embed = new Discord.RichEmbed() 
@@ -259,69 +259,65 @@ client.on("message", message => {
 
 💎『اوامر عامة』💎
                         
-💎^^server 『معلومات عن السيرفر』                      
+💎.server 『معلومات عن السيرفر』                      
 
-💎^^servers 『علشان تشوف البوت بكم سيرفر اون لاين 』  
+💎.servers 『علشان تشوف البوت بكم سيرفر اون لاين 』  
 
-💎^^bot 『لمعرف البوت بكم سيرفر』
+💎.bot 『لمعرف البوت بكم سيرفر』
 
-💎^^date 『لمعرفه التاريخ』
+💎.date 『لمعرفه التاريخ』
 
-💎^^ping 『لمعرفه سرعه البوت』
+💎.ping 『لمعرفه سرعه البوت』
 
-💎^^members 『معلومات عن الاعضاء』
+💎.members 『معلومات عن الاعضاء』
 
 ● ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ ● 
 
 👑『اوامر ادارية』👑
 
-👑^^rooms 『لمعرفه عدد رومات السيرفر』
+👑.rooms 『لمعرفه عدد رومات السيرفر』
 
-👑^^ban 『لتعطي شخص باند』
+👑.ban 『لتعطي شخص باند』
 
-👑^^kick 『لتعطي شخص كيك』
+👑.kick 『لتعطي شخص كيك』
 
-👑^^clear 『لمسح الشات برقم』
+👑.clear 『لمسح الشات برقم』
 
-👑^^ct  مـلاحظه: الاسم انت تختاره『لي انشاء روم كتابي』
+👑.ct  مـلاحظه: الاسم انت تختاره『لي انشاء روم كتابي』
 
-👑^^cv  مـلاحظه: الاسم انت تختاره『لي انشاء روم صوتي』
+👑.cv  مـلاحظه: الاسم انت تختاره『لي انشاء روم صوتي』
 
-👑^^delet  『كـود يحذف الـروم سواء صوتي او كتابي』
+👑.delet  『كـود يحذف الـروم سواء صوتي او كتابي』
 
 ● ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ ● 
 
 🎲『القرعة』🎲
 
-🎲^^roll 1   『القرعة من 1 الى 25』
+🎲.roll 1   『القرعة من 1 الى 25』
 
-🎲^^roll 2   『القرعة من 1 الى 50』
+🎲.roll 2   『القرعة من 1 الى 50』
 
-🎲^^roll 3   『القرعة من 1 الى 75』
+🎲.roll 3   『القرعة من 1 الى 75』
 
-🎲^^roll 4   『القرعة من 1 الى 100』
-
+🎲.roll 4   『القرعة من 1 الى 100』
 ● ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ ● 
 
 🎮『العاب』🎮
 
 
-🎮^^كت تويت
+🎮.كت تويت
 
-🎮^^مريم 
+🎮.مريم 
 
-🎮^^خواطر 
+🎮.خواطر 
 
 ● ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ ● 
 
 🎴『اوامر الصور』🎴
 
-🎴^^avatar 『لي عرض صورتك او صوره اي شخص』
+🎴.avatar 『لي عرض صورتك او صوره اي شخص』
 
-🎴^^image 『لي عرض صوره السيرفر』
-
-🎴قريبا
-
+🎴.image 『لي عرض صوره السيرفر』
 ● ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ ● 
 
 🎎『انواع الترحيب』🎎
@@ -340,9 +336,9 @@ client.on("message", message => {
 
 💎『الدعم الفني والمساعدة』💎
 
-^^invite | القسم الاول لي اضافه البوت 
+.invite | القسم الاول لي اضافه البوت 
 
-^^support| القسم الثاني  الدعم الفني و المساعدة
+.support| القسم الثاني  الدعم الفني و المساعدة
 
 القسم الثالث مصمم البوت | @ZinoDzYT#7947  
 
@@ -367,7 +363,7 @@ message.author.sendEmbed(embed)
 
 
 client.on('message', message => {
-    if (message.content.startsWith("^^avatar")) {
+    if (message.content.startsWith(".avatar")) {
         var mentionned = message.mentions.users.first();
     var x5bzm;
       if(mentionned){
@@ -385,7 +381,7 @@ client.on('message', message => {
 
                     client.on('message', message => {
                                 if(!message.channel.guild) return;
-                        if (message.content.startsWith('^^ping')) {
+                        if (message.content.startsWith('.ping')) {
                             if(!message.channel.guild) return;
                             var msg = `${Date.now() - message.createdTimestamp}`
                             var api = `${Math.round(client.ping)}`
@@ -401,7 +397,7 @@ client.on('message', message => {
                     });
 
 client.on("message", (message) => {
-if (message.content.startsWith("^^ct")) {
+if (message.content.startsWith(".ct")) {
             if (!message.member.hasPermission('MANAGE_CHANNELS')) return message.reply("You Don't Have `MANAGE_CHANNELS` Premissions ");
         let args = message.content.split(" ").slice(1);
     message.guild.createChannel(args.join(' '), 'text');
@@ -410,7 +406,7 @@ message.channel.sendMessage('تـم إنـشاء روم كـتابـي')
 }
 });
 client.on("message", (message) => {
-if (message.content.startsWith("^^cv")) {
+if (message.content.startsWith(".cv")) {
             if (!message.member.hasPermission('MANAGE_CHANNELS')) return message.reply("You Don't Have `MANAGE_CHANNELS` Premissions ");
         let args = message.content.split(" ").slice(1);
     message.guild.createChannel(args.join(' '), 'voice');
@@ -426,37 +422,15 @@ if (message.content.startsWith("^^cv")) {
 
 
 
-client.on('message', message => {
-  if (message.author.bot) return;
-  if (!message.content.startsWith(prefix)) return;
 
-  let command = message.content.split(" ")[0];
-  command = command.slice(prefix.length);
-
-  let args = message.content.split(" ").slice(1);
-
-// ^^say
-  if (command === "^^say") {
-          message.delete()
-    message.channel.sendMessage(args.join(" ")).catch(console.error);
-  }
   
  
 
-if (command == "^^embed") {
-    let say = new Discord.RichEmbed()
-    .setDescription(args.join("  "))
-    .setColor(0x23b2d6)
-    message.channel.sendEmbed(say);
-    message.delete();
-  }
 
-
-});
 
 
    client.on("message", message => {
-    const prefix = "^^"
+    const prefix = "."
               
           if(!message.channel.guild) return;
    if(message.author.bot) return;
@@ -512,7 +486,7 @@ if (command == "^^embed") {
 
 
 client.on('message', (message) => {
-    if (message.content.startsWith('^^ban ')) {
+    if (message.content.startsWith('.ban ')) {
       if(!message.member.hasPermission('BAN_MEMBERS')) return message.reply('هذا الخاصية للدارة فقط');
         var member= message.mentions.members.first();
         member.ban().then((member) => {
@@ -524,7 +498,7 @@ client.on('message', (message) => {
 });
   
   client.on("message", (message) => {
-    if (message.content.startsWith('^^delet')) {
+    if (message.content.startsWith('.delet')) {
         if (!message.member.hasPermission('MANAGE_CHANNELS')) return message.reply("You Don't Have `MANAGE_CHANNELS` Premissions ");
 
         let args = message.content.split(' ').slice(1);
@@ -536,7 +510,7 @@ client.on('message', (message) => {
   
   
 client.on('message', message => {
-     if (message.content === "^^servers") {
+     if (message.content === ".servers") {
      let embed = new Discord.RichEmbed()
   .setColor("RANDOM")
   .addField("**| السيرفرات |**" , client.guilds.size)
@@ -545,18 +519,10 @@ client.on('message', message => {
 });
 
   
-var cats = ["https://i.ytimg.com/vi/SfLV8hD7zX4/maxresdefault.jpg","http://www.dogbazar.org/wp-content/uploads/2014/09/british-bull-dog-puppies.jpg","http://cdn2-www.dogtime.com/assets/uploads/gallery/german-shepherd-dog-breed-pictures/standing-7.jpg","http://cdn.akc.org/Marketplace/Breeds/German_Shepherd_Dog_SERP.jpg","https://animalso.com/wp-content/uploads/2016/12/black-german-shepherd_2.jpg","https://static.pexels.com/photos/104827/cat-pet-animal-domestic-104827.jpg","https://www.petfinder.com/wp-content/uploads/2012/11/101438745-cat-conjunctivitis-causes.jpg","http://www.i-love-cats.com/images/2015/04/12/cat-wallpaper-38.jpg","https://www.aspca.org/sites/default/files/cat-care_urine-marking_main-image.jpg","https://s-media-cache-ak0.pinimg.com/originals/f0/3b/76/f03b7614dfadbbe4c2e8f88b69d12e04.jpg","http://www.rd.com/wp-content/uploads/sites/2/2016/04/15-cat-wants-to-tell-you-attention.jpg","https://www.thelocal.de/userdata/images/article/fa6fd5014ccbd8f4392f716473ab6ff354f871505d9128820bbb0461cce1d645.jpg","https://www.adelaidezoo.com.au/wp-content/uploads/sites/2/animals/GiantPanda3Slider.jpg","http://imagem.band.com.br/f_230168.jpg"]
-    client.on('message', message => {
-        var args = message.content.split(" ").slice(1);
-    if(message.content.startsWith(prefix + 'animal')) {
-         var cat = new Discord.RichEmbed()
-.setImage(cats[Math.floor(Math.random() * cats.length)])
-message.channel.sendEmbed(cat);
-    }
-});
+
 
 client.on('message', message => {
-var prefix = "^^";
+var prefix = ".";
 
     if (message.author.id === client.user.id) return;
     if (message.guild) {
@@ -584,7 +550,7 @@ return;
 });
 
 client.on('message', message => {
-    if (message.content === "^^server") {
+    if (message.content === ".server") {
         if (!message.channel.guild) return
         var verificationLevel = message.guild.verificationLevel;
         const verificationLevels = ['None','Low','Meduim','High','Extreme'];
@@ -611,7 +577,7 @@ client.on('message', message => {
 
 
   client.on('message', message => {
-    if (message.content === "^^rooms") {
+    if (message.content === ".rooms") {
                       if (!message.guild) return;
 
         var channels = message.guild.channels.map(channels => `${channels.name}, `).join(' ')
@@ -650,7 +616,7 @@ client.on('message', message => {
 
     client.on('message', message => {
               if (!message.channel.guild) return;
-      if(message.content =='^^members')
+      if(message.content =='.members')
       var IzRo = new Discord.RichEmbed()
       .setThumbnail(message.author.avatarURL)
       .setFooter(message.author.username, message.author.avatarURL) 
@@ -668,17 +634,10 @@ client.on('message', message => {
 
 
 
-client.on('message', message => {
-    if (message.author.bot) return;
-    if (!message.content.startsWith(prefix)) return;
 
-    if (message.content.startsWith(prefix + 'edit')) {
-        message.channel.sendMessage('Edit me').then(msg=>{msg.edit('Done edit')});
-    }
-});
 
 client.on('message', message => {
-     if (message.content === "^^bot") {
+     if (message.content === ".bot") {
             if(!message.channel.guild) return message.reply('** This command only for servers **');
      let embed = new Discord.RichEmbed()
   .setColor("RANDOM")
@@ -693,7 +652,7 @@ message.channel.sendEmbed(embed);
 
 
 client.on('message', message => {
-    if (message.content === "^^roles") {
+    if (message.content === ".roles") {
         var roles = message.guild.roles.map(roles => `${roles.name}, `).join(' ')
         const embed = new Discord.RichEmbed()
         .setColor('RANDOM')
@@ -713,16 +672,16 @@ client.on("guildCreate", guild => {
   
   
 client.on('ready', () => {
-   client.user.setGame(" ^^help | ^^invite ");
+   client.user.setGame(" .help | .invite ");
 }); 
 
 client.on("message", message => {
-    var prefix = "^^";
+    var prefix = ".";
             var args = message.content.substring(prefix.length).split(" ");
             if (message.content.startsWith(prefix + "clear")) {
  if (!args[1]) {
                                 let x5bz1 = new Discord.RichEmbed()
-                                .setDescription("^^clear <number>")
+                                .setDescription(".clear <number>")
                                 .setColor("#0000FF")
                                 message.channel.sendEmbed(x5bz1);
                             } else {
@@ -749,7 +708,7 @@ client.on("message", message => {
 
 client.on('message', message => {
   if (true) {
-if (message.content === '^^support') {
+if (message.content === '.support') {
       message.author.send(' |https://discord.gg/NxGfk5b| لـ أي استفسار').catch(e => console.log(e.stack));
 
     }
@@ -759,7 +718,7 @@ if (message.content === '^^support') {
   
 
 client.on('message', message => {
-     if (message.content === "^^support") {
+     if (message.content === ".support") {
      let embed = new Discord.RichEmbed()
   .setAuthor(message.author.username)
   .setColor("#9B59B6")
@@ -774,7 +733,7 @@ client.on('message', message => {
 
 client.on('message', message => {
   if (true) {
-if (message.content === '^^invite') {
+if (message.content === '.invite') {
       message.author.send(' رابط البوت |  https://discordapp.com/oauth2/authorize?client_id=471026336123715584&permissions=8&scope=bot ').catch(e => console.log(e.stack));
 
     }
@@ -784,7 +743,7 @@ if (message.content === '^^invite') {
   
 
 client.on('message', message => {
-     if (message.content === "^^invite") {
+     if (message.content === ".invite") {
      let embed = new Discord.RichEmbed()
   .setAuthor(message.author.username)
   .setColor("#9B59B6")
@@ -810,7 +769,7 @@ m.sendMessage(args)
 
 
 client.on('message', message=>{
-    if (message.content ==='^^add-colors'){
+    if (message.content ==='.add-colors'){
         if (message.channel.guild){
             if (message.member.hasPermission('MANAGE_ROLES')){
                 setInterval(function(){})
@@ -827,7 +786,7 @@ client.on('message', message=>{
             message.channel.sendMessage(':warning:  This command only in servers')
         }
     }
-    if (message.content === '^^de-colors'){
+    if (message.content === '.de-colors'){
                 if (message.channel.guild){
             if (message.member.hasPermission('MANAGE_ROLES')){
                 setInterval(function(){})
@@ -1240,7 +1199,7 @@ const secre = [
  
  
  client.on('message', message => {
-   if (message.content.startsWith("^^لوخيروك")) {
+   if (message.content.startsWith(".لوخيروك")) {
                 if(!message.channel.guild) return message.reply('** This command only for servers**');
   var embed = new Discord.RichEmbed()
   .setColor('RANDOM')
@@ -1303,7 +1262,7 @@ const secre = [
 
 
 client.on("message", message => {
-    var prefix = "^^"; // غير هنا حط البرفكس
+    var prefix = "."; // غير هنا حط البرفكس
  
             var args = message.content.substring(prefix.length).split(" ");
             if (message.content.startsWith(prefix + "clear")) {
@@ -1339,7 +1298,7 @@ client.on("message", message => {
 
 
 client.on('message', message => {
-    var prefix = "^^"
+    var prefix = "."
     if (message.content === prefix + "date") {
         var currentTime = new Date(),
             السنة = currentTime.getFullYear(),
@@ -1373,7 +1332,7 @@ client.on("guildCreate", guild => {
 
 client.on('ready', function(){
     var ms = 10000 ;
-    var setGame = ['In 10 Server','^^help | ^^invite','In 10 Server','^^help | ^^invite','In 10 Server'];
+    var setGame = ['In 10 Server','.help | .invite','In 10 Server','.help | .invite','In 10 Server'];
     var i = -1;
     var j = 0;
     setInterval(function (){
@@ -1415,7 +1374,7 @@ client.on("message", message => {
 
 
 client.on('message',async message => {
-var codes = "^^";
+var codes = ".";
 var args = message.content.split(" ").slice(1);
 var title = args[1]
           if(message.content.startsWith(codes + "start")) {
@@ -1448,7 +1407,7 @@ var title = args[1]
 
 
 client.on("message", message => {
- if (message.content === "^help^^^") {
+ if (message.content === ".help...") {
         message.react("😮")
                 message.react("🤒")
   const embed = new Discord.RichEmbed() 
@@ -1460,32 +1419,32 @@ client.on("message", message => {
 ● ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ ● 
 👑『اوامر ادارية』👑
 
-👑^^ban 『لتعطي شخص باند』
+👑.ban 『لتعطي شخص باند』
 
-👑^^kick 『لتعطي شخص كيك』
+👑.kick 『لتعطي شخص كيك』
 
-👑^^clear 『لمسح الشات برقم』
+👑.clear 『لمسح الشات برقم』
 
-👑^^ct  مـلاحظه: الاسم انت تختاره『لي انشاء روم كتابي』
+👑.ct  مـلاحظه: الاسم انت تختاره『لي انشاء روم كتابي』
 
-👑^^cv  مـلاحظه: الاسم انت تختاره『لي انشاء روم صوتي』
+👑.cv  مـلاحظه: الاسم انت تختاره『لي انشاء روم صوتي』
 
-👑^^delet  『كـود يحذف الـروم سواء صوتي او كتابي』
+👑.delet  『كـود يحذف الـروم سواء صوتي او كتابي』
 
-👑^^bc  『خيارات البرودكاست』 
+👑.bc  『خيارات البرودكاست』 
 
-👑^^rooms 『لمعرفه عدد رومات السيرفر』
+👑.rooms 『لمعرفه عدد رومات السيرفر』
 
-👑^^add
+👑.add-colors
 ● ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ ● 
 
 	  
 
 💎『الدعم الفني والمساعدة』💎
 
-^^invite | القسم الاول لي اضافه البوت 
+.invite | القسم الاول لي اضافه البوت 
 
-^^support| القسم الثاني  الدعم الفني و المساعدة
+.support| القسم الثاني  الدعم الفني و المساعدة
 
 القسم الثالث مصمم البوت | @ZinoDzYT#7947  
 
@@ -1505,7 +1464,7 @@ message.author.sendEmbed(embed)
 
 
 client.on("message", message => {
- if (message.content === "^help^^") {
+ if (message.content === ".help..") {
         message.react("😳")
                 message.react("👻")
   const embed = new Discord.RichEmbed() 
@@ -1518,17 +1477,17 @@ client.on("message", message => {
 
 💎『اوامر عامة』💎
                         
-💎^^server 『معلومات عن السيرفر』                      
+💎.server 『معلومات عن السيرفر』                      
 
-💎^^servers 『علشان تشوف البوت بكم سيرفر اون لاين 』  
+💎.servers 『علشان تشوف البوت بكم سيرفر اون لاين 』  
 
-💎^^bot 『لمعرف البوت بكم سيرفر』
+💎.bot 『لمعرف البوت بكم سيرفر』
 
-💎^^date 『لمعرفه التاريخ』
+💎.date 『لمعرفه التاريخ』
 
-💎^^ping 『لمعرفه سرعه البوت』
+💎.ping 『لمعرفه سرعه البوت』
 
-💎^^members 『معلومات عن الاعضاء』
+💎.members 『معلومات عن الاعضاء』
 
 
 ● ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ ● 
@@ -1536,9 +1495,9 @@ client.on("message", message => {
 
 💎『الدعم الفني والمساعدة』💎
 
-^^invite | القسم الاول لي اضافه البوت 
+.invite | القسم الاول لي اضافه البوت 
 
-^^support| القسم الثاني  الدعم الفني و المساعدة
+.support| القسم الثاني  الدعم الفني و المساعدة
 
 القسم الثالث مصمم البوت | @ZinoDzYT#7947 
 
@@ -1560,7 +1519,7 @@ message.author.sendEmbed(embed)
 
 
 client.on('message',message =>{
-    var prefix = "^^";
+    var prefix = ".";
     if(message.content.startsWith(prefix + 'top')) {
   message.guild.fetchInvites().then(i =>{
   var invites = [];
