@@ -57,13 +57,13 @@ client.on("message", message => {
 	  
 	       Help Commands: 
 			 
-${prefix}.help.. ⥨ الاوامر العامة
-${prefix}.help... ⥨ اوامر الادارة
+{prefix}.help.. ⥨ الاوامر العامة
+{prefix}.help... ⥨ اوامر الادارة
 			 
  
 Other Commands:
-${prefix}invite ⥨ لدعوة البوت الى سيرفرك
-${prefix}support ⥨ لدخول سيرفر الدعم
+{prefix}invite ⥨ لدعوة البوت الى سيرفرك
+{prefix}support ⥨ لدخول سيرفر الدعم
 	  `)
    message.channel.sendEmbed(embed)
     
