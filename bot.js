@@ -49,29 +49,26 @@ client.on('ready',  () => {
 
 
 client.on("message", message => {
-             
-     if(!message.channel.guild) return;
-
+	var prefix = "^^";
  if (message.content === "^^help") {
-   message.react("😜")
-  const embed = new Discord.RichEmbed()
-      .setColor("RANDOM")
-      .addField("『Gaming BOT』 『Gaming BOT』", )
-      
-      .addField("@ZinoDzYT#7947", )
-      
-      .addField("『^help^』😘『اذا تبي جميع الاوامر مع اوامر اضافية』😵", )
-      
-	    .addField("『^help^^』👻『اذا تبي الاوامر العامة』😳", )
-	    
-      .addField("『^help^^^』😮『اذا تبي  الاوامر الادارية』🤒", )
-      
-      .addField("『🤑』『قريبا سوف نضيف المزيد و المزيد من الاوامر 』『😉』", )
-      
-  message.channel.sendMessage({embed});
-
- }
-});
+  const embed = new Discord.RichEmbed()  
+      .setColor("#8325c0") 
+      .setDescription(`
+	  
+	       Help Commands: 
+			 
+${prefix}^help^^ ⥨ الاوامر العامة
+${prefix}^help^^^ ⥨ اوامر الادارة
+			 
+ 
+Other Commands:
+${prefix}invite ⥨ لدعوة البوت الى سيرفرك
+${prefix}support ⥨ لدخول سيرفر الدعم
+	  `)
+   message.channel.sendEmbed(embed)
+    
+   }
+   }); 
 
 
 
