@@ -1577,33 +1577,29 @@ client.on('message', message => {
 
 
 
-const jackeo = ['471026336123715584 ' , '346454919328432128' , '244888652004458497' , '']; //Jackeo  حقوقي
-client.on('message', message => { //Jackeo  حقوقي
-var prefix = "."; //Jackeo  حقوقي
-  if (message.author.bot) return; //Jackeo  حقوقي
-  if (!message.content.startsWith(prefix)) return; //Jackeo  حقوقي
-    var argresult = message.content.split(` `).slice(1).join(' '); //Jackeo  حقوقي
-      if (!jackeo.includes(message.author.id)) return; //Jackeo  حقوقي
-  let command = message.content.split(" ")[0]; //Jackeo  حقوقي
-  command = command.slice(prefix.length); //Jackeo  حقوقي
- //Jackeo  حقوقي  //Jackeo  حقوقي  //Jackeo  حقوقي  //Jackeo  حقوقي
-  let args = message.content.split(" ").slice(1);  //Jackeo  حقوقي
- //Jackeo  حقوقي  //Jackeo  حقوقي  //Jackeo  حقوقي  //Jackeo  حقوقي
-  if (command === "say")  { //Jackeo  حقوقي
-  if(!message.channel.guild) return message.reply('** __This command only for servers⛔__  **'); //Jackeo  حقوقي
-          message.delete() //Jackeo  حقوقي
-    message.channel.sendMessage(args.join(" ")).catch(console.error); //Jackeo  حقوقي
-  } //Jackeo  حقوقي  //Jackeo  حقوقي  //Jackeo  حقوقي  //Jackeo  حقوقي  //Jackeo  حقوقي
-   //Jackeo  حقوقي  //Jackeo
-if (command == "emb")    { //Jackeo  حقوقي
-  if(!message.channel.guild) return message.reply('** __This command only for servers⛔__  **'); //Jackeo  حقوقي
-    let say = new Discord.RichEmbed() //Jackeo  حقوقي
-    .setDescription(args.join("  ")) //Jackeo  حقوقي
-    .setColor("RANDOM") //Jackeo  حقوقي
-    message.channel.sendEmbed(say); //Jackeo  حقوقي
-    message.delete(); //Jackeo  حقوقي
-  } //Jackeo  حقوقي 
-});
+client.on("message", message => {
+        let args = message.content.split(" ").slice(1);
+      if (message.content.startsWith(prefix + 'report')) {
+            let user = message.mentions.users.first();
+            let reason = args.slice(1).join(' ');
+            let modlog = client.channels.find('name', 'report');
+            if (!reason) return message.reply('**ضع سبباً مقنعاً**');
+              if (message.mentions.users.size < 1) return message.reply('**يجب عليك منشن للعضو المراد الابلاغ عليه**').catch(console.error);
+       
+        if (!modlog) return message.reply('**لا يوجد روم بأسم report**');
+        const embed = new Discord.RichEmbed()
+          .setColor(0x00AE86)
+          .setTimestamp()
+          .addField('نوع الرسالة:', 'Report')
+          .addField('المراد الابلاغ عليه:', `${user.username}#${user.discriminator} (${user.id}`)
+          .addField('صاحب الابلاغ:', `${message.author.username}#${message.author.discriminator}`)
+          .addField('السبب', reason);
+          message.delete()
+          return client.channels.get(modlog.id).sendEmbed(embed).catch(console.error);
+          console.log('[report] Send By: ' + message.author.username)
+      }
+      });
+
 
 
 
