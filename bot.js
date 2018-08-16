@@ -1604,24 +1604,24 @@ client.on("message", message => {
 
 
 
-client.on('message', message => { //-MaX PicAssO#8266 codes©
+client.on('message', message => { 
   if (message.content === ".id") {
-  let embed = new Discord.RichEmbed()//-MaX PicAssO#8266 codes©
+  let embed = new Discord.RichEmbed()
 .setThumbnail(message.author.avatarURL)  
-.setAuthor(message.author.username)//-MaX PicAssO#8266 codes©
+.setAuthor(message.author.username)
 .setDescription("**معلومات عن الحــساب**")
-            .setFooter(`-MaX PicAssO#8266.©`, 'codes.©')//-MaX PicAssO#8266 codes©
+            .setFooter(`-MaX PicAssO#8266.©`, 'codes.©')
 .setColor("#9B59B6")
-.addField("**اســـم الحســاب**", `${message.author.username}`)//-MaX PicAssO#8266 codes©
+.addField("**اســـم الحســاب**", `${message.author.username}`)
 .addField('**تاق الحساب الخاص**', message.author.discriminator)
-.addField("**الرقـــم الشـــخصي**", message.author.id)//-MaX PicAssO#8266 codes©
+.addField("**الرقـــم الشـــخصي**", message.author.id)
 .addField('**بــــوت**', message.author.bot)
-.addField("**تاريخ التسجيل**", message.author.createdAt)//-MaX PicAssO#8266 codes©
-  //-MaX PicAssO#8266 codes©
+.addField("**تاريخ التسجيل**", message.author.createdAt)
+ 
 
 message.channel.sendEmbed(embed);
  }
-});//تبغى تنشره حط حقوق كودز💙©
+});
   
 
 
