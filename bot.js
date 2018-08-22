@@ -1537,7 +1537,6 @@ client.on('message',message =>{
   var embed = new Discord.RichEmbed()
   .setColor("#000000")
   .setDescription(`${invites.join(`\n`)+'\n\n**By:** '+message.author}`)
-  .setThumbnail("https://i.imgur.com/OM00xyh.png")
            message.channel.send({ embed: embed });
    
   });
@@ -1624,14 +1623,80 @@ message.channel.sendEmbed(embed);
   
 
 
+client.on('message', message => {
+    if(message.content == prefix + 'servers') {
+             if(!message.author.id === '244888652004458497') return;
+    var gimg;
+    var gname;
+    var gmemb;
+    var gbots;
+    var groles;
+    var servers = client.guilds;
+    servers.forEach((g)=>{
+    gname = g.name;
+    gimg = g.iconURL;
+    gmemb = g.members.size;
+    let serv = new Discord.RichEmbed()
+    .setAuthor(gname,gimg)
+    .setThumbnail(gimg)
+    .addField('Server Member Count',gmemb = g.members.size)
+    .setColor('RANDOM')
+    message.channel.send(`
+    
+            `);
+          message.channel.sendEmbed(serv);
+    }) 
+    }
+    });
 
 
 
 
 
 
+client.on('message', message => {
+    const prefix = '.'
+var args = message.content.split(" ").slice(1);    
+if(message.content.startsWith(prefix + 'id')) {
+var year = message.author.createdAt.getFullYear()
+var month = message.author.createdAt.getMonth()
+var day = message.author.createdAt.getDate()
+var men = message.mentions.users.first();  
+let args = message.content.split(' ').slice(1).join(' ');
+if (args == '') {
+var z = message.author;
+}else {
+var z = message.mentions.users.first();
+}
 
+let d = z.createdAt;          
+let n = d.toLocaleString();   
+let x;                       
+let y;                        
 
+if (z.presence.game !== null) {
+y = `${z.presence.game.name}`;
+} else {
+y = "Not Playing....";
+}
+let embed = new Discord.RichEmbed()
+.setColor("#502faf")
+.addField('Name :',`**<@` + `${z.id}` + `>**`, true)
+.addField('ID :', "**"+ `${z.id}` +"**",true)
+.addField('Playing :','**'+y+'**' , true)
+.addField('Discrim :',"**#" +  `${z.discriminator}**`,true)
+.addField('**Created At**', message.author.createdAt.toLocaleString())
+.addField("**Joined At**", message.member.joinedAt.toLocaleString())    
+
+.setThumbnail(`${z.avatarURL}`)
+.setFooter(message.author.username, message.author.avatarURL)
+
+message.channel.send({embed});
+    if (!message) return message.reply('**ضع المينشان بشكل صحيح  ❌ **').catch(console.error);
+
+}
+
+});
 
 
 
