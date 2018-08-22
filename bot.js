@@ -698,17 +698,12 @@ client.on("message", message => {
 });
 
 
- client.on('guildMemberAdd', member => {
-  const channel = member.guild.channels.find('name', 'welcome');
-  if (!channel) return;
-  channel.send(`***Welcome To The Server :heart: ***, ${member}`);
-  
-});
+ 
 
 client.on('message', message => {
   if (true) {
-if (message.content === '.support') {
-      message.author.send(' |https://discord.gg/NxGfk5b| لـ أي استفسار').catch(e => console.log(e.stack));
+if (message.content === '.supp') {
+      message.author.send(' |https://discord.gg/84RbcTZ| لـ أي استفسار').catch(e => console.log(e.stack));
 
     }
    } 
@@ -717,7 +712,7 @@ if (message.content === '.support') {
   
 
 client.on('message', message => {
-     if (message.content === ".support") {
+     if (message.content === ".supp") {
      let embed = new Discord.RichEmbed()
   .setAuthor(message.author.username)
   .setColor("#9B59B6")
@@ -1331,7 +1326,7 @@ client.on("guildCreate", guild => {
 
 client.on('ready', function(){
     var ms = 10000 ;
-    var setGame = ['In 11 Server','.help | .invite','In 11 Server','.help | .invite','In 11 Server'];
+    var setGame = ['In 12 Server','.help .supp| .invite','In 12 Server','.help | .invite','In 12 Server'];
     var i = -1;
     var j = 0;
     setInterval(function (){
