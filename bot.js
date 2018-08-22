@@ -1907,7 +1907,7 @@ client.on('message', msg => {
         if (msg.member.voiceChannel) {
 
      if (msg.member.voiceChannel.joinable) {
-         msg.member.voiceChannel.join().then(msg.react('✅'));
+         msg.member.voiceChannel.join().then(msg.react('.'));
      }
     }
 }
