@@ -1072,15 +1072,7 @@ client.on('message', message => {
 });
 
 
-client.on("guildMemberAdd", function(member) {
-     wc = member.guild.channels.find("name", "welcome")
-         embed = new Discord.RichEmbed()
-        .setColor('00FF01')
-        .setAuthor(member.user.tag, member.user.avatarURL)
-        .setFooter(" WELCOME TO THE SERVER  ")
-        .setTimestamp()
-        return wc.sendEmbed(embed);
-});
+
 
 
 
