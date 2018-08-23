@@ -1318,7 +1318,7 @@ client.on("guildCreate", guild => {
 
 client.on('ready', function(){
     var ms = 10000 ;
-    var setGame = ['In 15 Server','.help .supp| .invite','In 15 Server','.help | .invite','In 15 Server'];
+    var setGame = ['In 16 Server','.help .supp| .invite','I6 16 Server','.help | .invite','In 16 Server'];
     var i = -1;
     var j = 0;
     setInterval(function (){
