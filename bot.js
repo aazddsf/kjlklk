@@ -725,14 +725,7 @@ client.on('message', message => {
 });
 
 
-client.on('message', message => {
-  if (true) {
-if (message.content === '.invite') {
-      message.author.send(' رابط البوت |  https://discordapp.com/oauth2/authorize?client_id=471026336123715584&permissions=8&scope=bot ').catch(e => console.log(e.stack));
 
-    }
-   } 
-  });
   
   
 
