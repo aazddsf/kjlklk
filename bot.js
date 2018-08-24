@@ -1671,7 +1671,7 @@ client.on('message',async msg => {
 Year = currentTime.getFullYear(),
 Month = currentTime.getMonth() + 1,
 Dat = currentTime.getDate()
-      time.setName(`Date : [${Year} - ${Month} - ${Dat}]]`);
+      time.setName(`Date : [${Year} - ${Month} - ${Dat}]`);
  },1000);
   });
   }
@@ -1680,19 +1680,137 @@ Dat = currentTime.getDate()
 	
 	
 	
+client.on("message", async message => {
+      if(message.author.bot) return;
+      if(message.channel.type === "dm") return;
+
+      let prefix = ".";
+      let messageArray = message.content.split (" ");
+      let cmd = messageArray[0];
+      let args = messageArray.slice(1);
+
+
+
+        if(cmd === `${prefix}ban`){
+
+
+
+          let kUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
+          if(!kUser) return message.channel.send("فين العضو ؟");
+          let kReason = args.join(" ").slice(22);
+          if(!message.member.hasPermission("MANAGE_CHANNELS")) return message.channel.send("ما عندك برمشن");
+          if(kUser.hasPermission("MANAGE_CHANNELS")) return message.channel.send("ما تقدر تسوي بان للأدمين")
+
+          let banEmbed = new Discord.RichEmbed()
+          .setDescription("~Ban~")
+          .setColor("#8e0505")
+          .addField("Banned User", `${bUser} with ID ${bUser.id}`)
+          .addField("Banned By", `<@${message.author.id}> with the id ${message.author.id}`)
+          .addField("Banned In", message.channel)
+          .addField("Time", message.createdAt)
+          .addField("Reason", kReason);
+
+          let banChannel = message.guild.channels.find('name', 'kick-ban');
+          if(!banChannel) return message.channel.send("لم اجد روم kick-ban");
+
+          message.guild.member(bUser).kick(bReason)
+          banChannel.send(banEmbed);
+        }
+        });	
 	
 	
 	
 	
 	
+	var temp = {
+
+};
+var prefix = ".";
+client.on("message",(message) => {
+    if (message.channel.type !== "text") return;
+    if (!message.content.startsWith(prefix)) return;
+    switch(message.content.split(" ")[0].slice(prefix.length)) {
+        case "tempon" :
+            if (!message.member.hasPermission("MANAGE_CHANNELS")) return message.reply("** You Don't Have Permission `Manage channels` To Do This Command");
+            temp[message.guild.id] = {
+                work : true,
+                channel : "Not Yet"
+            };
+            message.guild.createChannel("اضغط لصنع روم مؤقت").then(c => {
+                c.setPosition(1);
+                temp[message.guild.id].channel = c.id
+                message.channel.send("** Done.**");
+            });
+        break;
+        case "tempof" :
+        if (!message.member.hasPermission("MANAGE_CHANNELS")) return message.reply("** You Don't Have Permission `Manage channels` To Do This Command");
+        message.guild.channels.get(temp[message.guild.id]).delete();
+            temp[message.guild.id] = {
+                work : false,
+                channel : "Not Yet"
+            };
+        message.channel.send("** Done.**");
+    };
+});
+client.on("voiceStateUpdate", (o,n) => {
+    if (!temp[n.guild.id]) return;
+    if (temp[n.guild.id].work == false) return;
+    if (n.voiceChannelID == temp[n.guild.id].channel) {
+        n.guild.createChannel(n.user.username, 'voice').then(c => {
+            n.setVoiceChannel(c);
+            c.overwritePermissions(n.user.id, {
+                CONNECT:true,
+                SPEAK:true,
+                MANAGE_CHANNEL:true,
+                MUTE_MEMBERS:true,
+                DEAFEN_MEMBERS:true,
+                MOVE_MEMBERS:true,
+                VIEW_CHANNEL:true  
+            });
+        })
+    };
+    if (!o.voiceChannel) return;
+    if (o.voiceChannel.name == o.user.username) {
+        o.voiceChannel.delete();
+    };
+});
 	
 	
 	
 	
 	
-	
-	
-	
+	client.on('message',async msg => {
+  var p = ".";
+  if(msg.content.startsWith(p + "settime")) {
+  if(!msg.guild.member(msg.author).hasPermissions('MANAGE_CHANNELS')) return msg.reply('❌ **go play minecraft**');
+  if(!msg.guild.member(client.user).hasPermissions(['MANAGE_CHANNELS'])) return msg.reply('❌ **البوت لا يمتلك صلاحية**');
+  msg.guild.createChannel(`Time :[]` , 'voice').then(time => {
+    time.overwritePermissions(msg.guild.id, {
+      CONNECT: false,
+      SPEAK: false
+    });
+  setInterval(() => {
+      var currentTime = new Date(),
+hours = currentTime.getHours() + 3 ,
+minutes = currentTime.getMinutes(),
+Seconds = currentTime.getSeconds()
+if (minutes < 10) {
+minutes = "0" + minutes;
+}
+var suffix = "AM";
+if (hours >= 12) {
+suffix = "PM";
+hours = hours - 12;
+}
+if (hours == 0) {
+hours = 12;
+}
+      time.setName(`Time :[${hours} : ${minutes} : ${Seconds} ${suffix}]`);
+ },1000);
+  });
+  }
+ 
+});
 	
 	
 	
