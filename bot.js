@@ -1911,7 +1911,7 @@ module.exports = (client, message, new_message, player1_id, player2_id, turn_id,
 	
 	
 	
-const Discord = require('discord.js');
+
 
 const Util = require('discord.js');
 
