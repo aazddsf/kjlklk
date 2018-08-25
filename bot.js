@@ -41,7 +41,7 @@ client.on('message', msg => {
  
 
 client.on('ready',  () => {
-  console.log('By :  @ZinoDzYT#7947 ');
+  console.log('By :  @ZinoDzYT#1089  ');
   console.log(`Logged in as * [ " ${client.user.username} " ] servers! [ " ${client.guilds.size} " ]`);
   console.log(`Logged in as * [ " ${client.user.username} " ] Users! [ " ${client.users.size} " ]`);
   console.log(`Logged in as * [ " ${client.user.username} " ] channels! [ " ${client.channels.size} " ]`);
@@ -674,28 +674,6 @@ client.on('ready', () => {
    client.user.setGame(" .help | .invite ");
 }); 
 
-client.on("message", message => {
-    var prefix = ".";
-            var args = message.content.substring(prefix.length).split(" ");
-            if (message.content.startsWith(prefix + "clear")) {
- if (!args[1]) {
-                                let x5bz1 = new Discord.RichEmbed()
-                                .setDescription(".clear <number>")
-                                .setColor("#0000FF")
-                                message.channel.sendEmbed(x5bz1);
-                            } else {
-                            let messagecount = parseInt(args[1]);
-                            message.channel.fetchMessages({limit: messagecount}).then(messages => message.channel.bulkDelete(messages));
-                                                          message.channel.fetchMessages({limit: messagecount}).then(messages => message.channel.bulkDelete(messages));
-                            message.channel.fetchMessages({limit: messagecount}).then(messages => message.channel.bulkDelete(messages));
-                            let x5bz2 = new Discord.RichEmbed()
-                                                            .setColor("#008000")
-                                .setDescription(":white_check_mark: | Delete " + args[1] + " Message!")
-                                                                                        message.delete("..");
-                                message.channel.sendEmbed(x5bz2);
-                            }
-                          }
-});
 
 
  
@@ -1424,7 +1402,7 @@ client.on("message", message => {
 
 .supp| القسم الثاني  الدعم الفني و المساعدة
 
-القسم الثالث مصمم البوت | @ZinoDzYT#7947  
+القسم الثالث مصمم البوت | @ZinoDzYT#1089   
 
 
 
@@ -1475,9 +1453,9 @@ client.on("message", message => {
 
 .invite | القسم الاول لي اضافه البوت 
 
-.support| القسم الثاني  الدعم الفني و المساعدة
+.supp| القسم الثاني  الدعم الفني و المساعدة
 
-القسم الثالث مصمم البوت | @ZinoDzYT#7947 
+القسم الثالث مصمم البوت | @ZinoDzYT#1089  
 
 
 `)
