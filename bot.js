@@ -63,7 +63,7 @@ client.on("message", message => {
  
 Other Commands:
 .invite ⥨ لدعوة البوت الى سيرفرك
-.support ⥨ لدخول سيرفر الدعم
+.supp ⥨ لدخول سيرفر الدعم
 	  `)
    message.channel.sendEmbed(embed)
     
