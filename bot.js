@@ -1910,7 +1910,6 @@ module.exports = (client, message, new_message, player1_id, player2_id, turn_id,
 	
 	
 	
-const Discord = require('discord.js');
 
 const Util = require('discord.js');
 
@@ -1932,7 +1931,7 @@ const gif = require("gif-search");
 
 const client = new Discord.Client({disableEveryone: true});
 
-const prefix = "!";
+const prefix = ".";
 /////////////////////////
 ////////////////////////
 
