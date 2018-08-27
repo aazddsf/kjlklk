@@ -793,8 +793,7 @@ client.on('message', message=>{
                      
                                      .addField(' الـسيرفر', `${member.guild.name}`,true)
                                        
-     .setFooter(`${member.guild.name}`)
-        .setTimestamp()
+     
    
       channel.sendEmbed(embed);
     });
