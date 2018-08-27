@@ -789,9 +789,7 @@ client.on('message', message=>{
         .addField(':running_shirt_with_sash: | name :  ',`${member}`)
         .addField(':loudspeaker: | اطلق من دخل' , `Welcome to the server, ${member}`)
         .addField(':id: | user :', "**[" + `${member.id}` + "]**" )
-                .addField('➡| انت العضو رقم',`${member.guild.memberCount}`)
-               
-                  .addField("Name:",`<@` + `${member.id}` + `>`, true)
+                .addField('➡| انت العضو رقم',`${member.guild.memberCount}`
                      
                                      .addField(' الـسيرفر', `${member.guild.name}`,true)
                                        
@@ -1018,7 +1016,7 @@ client.on("guildCreate", guild => {
 
 client.on('ready', function(){
     var ms = 10000 ;
-    var setGame = ['In 19 Server','.help .supp| .invite',' 19 Server','.help | .invite','In 19 Server'];
+    var setGame = ['In 20 Server','.help .supp| .invite',' 20 Server','.help | .invite','In 20 Server'];
     var i = -1;
     var j = 0;
     setInterval(function (){
