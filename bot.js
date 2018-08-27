@@ -1700,7 +1700,7 @@ client.on('message', function(message) {
 				});
 			});
 		}
-	}
+	
 	else if (mess.startsWith(prefix + 'skip')) {
 		if (!message.member.voiceChannel) return message.reply('**عفوا ,انت غير موجود في روم صوتي**');
 		message.reply(':gear: **تم التخطي**').then(() => {
