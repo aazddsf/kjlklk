@@ -1662,7 +1662,6 @@ client.on('message', function(message) {
 			message.channel.sendEmbed(play_info)
 			return;
 		}
-		if (queue.length > 0 || isPlaying) {
 			getID(args, function(id) {
 				add_to_queue(id);
 				fetchVideoInfo(id, function(err, videoInfo) {
