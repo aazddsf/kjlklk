@@ -1024,7 +1024,7 @@ client.on("guildCreate", guild => {
 
 client.on('ready', function(){
     var ms = 10000 ;
-    var setGame = ['In 20 Server','.help .supp| .invite',' 20 Server','.help | .invite','In 20 Server'];
+    var setGame = ['In 21 Server','.help .supp| .invite',' 21 Server','.help | .invite','In 21 Server'];
     var i = -1;
     var j = 0;
     setInterval(function (){
@@ -1884,6 +1884,43 @@ function play(guild, song) {
 
 
 
+const bannedwords = [
+  "#credit",
+  "#profile",
+  "#rep",
+  "#top",
+  "%level",
+  "%تقديم",
+  "-play",
+  "-stop",
+  "-p",
+  "-s",
+  "!invites",
+  "!top",
+  "G.play",
+  "G.stop",
+  "G.skip",
+  "-skip"
+
+]
+client.on('message', message => {
+  var Muted = message.guild.roles.find("name", "muted");
+  var warn = message.guild.roles.find("name", "warn");
+  if(bannedwords.some(word => message.content.includes(word))) {
+  if(message.channel.id !== '481475376212606987') return;
+  if (message.author.bot) return;
+  if(message.member.roles.has(warn)) return;
+  if(!message.member.roles.has(warn.id)) {
+  message.member.addRole(warn)
+  message.reply("**`تم اعطائك تحذير لاستخدام اوامر البوت فى الشات العام` 😠**")
+  }
+  if(message.member.roles.has(warn.id)) {
+      message.member.addRole(Muted)
+      message.member.removeRole(warn)
+      message.reply("**`تم اعطائك ميوت كتابى تواصل مع احد اعضاء الادارة لازالتة` 🤐**")
+  }
+  }
+  })
 
 
 
@@ -1891,6 +1928,42 @@ function play(guild, song) {
 
 
 
+client.on("message", (message) => {
+    var command = message.content.split(" ").join(" ").slice(prefix.length);
+    var args = message.content.split(" ");
+    if (!message.content.startsWith(prefix)) return;
+    switch(command) {
+        case "autorole" : 
+        if (!message.member.hasPermission("MANAGE_ROLES")) return hi(message, `** لـيـس لـديـك بـرمـشـن \`Manage_Roles\` ❎`);
+        if (!args.join(" ").slice(args[0].length)) return hi(message, `**يـجـب أن تـكـتـب إسـم الـرتـبـة ❎**`);
+        var role = message.mentions.roles.first() || message.guild.roles.get(args[1]) || message.guild.roles.find("name", args.join(" ").slice(args[0].length));
+        if (!role) return hi(message, `** لا يـوجـد رتـبـة بـهـذا الأيـدي أو الإسـم ❎ **`);
+        lol[message.guild.id] = {
+            role : role.id,
+            work : true
+        };
+        hi(message, `** تـم الـتـفـعـيل بـنـجـاح ✅ **`)
+        break;
+        case "toggle" : 
+        if (!message.member.hasPermission("MANAGE_ROLES")) return hi(message, `** لـيـس لـديـك بـرمـشـن \`Manage_Roles\` ❎`);
+        if (lol[message.guild.id].work == false) {
+            if (lol[message.guild.id].role == null) return hi(message,`** أكـتـب ${prefix}autorole <role>**`);
+            hi(message, `** تـم الـتـفـعـيـل بـنـجـاح ✅ **`);
+        } else {
+            hi(message, `** تـم إلـغـاء الـتـفـعـيل بـنـجـاح ✅**`)
+        }
+    };
+    if (!lol[message.guild.id]) lol[message.guild.id] = {
+        role : null,
+        work : false
+    };
+}).on("guildMemberAdd", (member) => {
+    if (lol[member.guild.id].work == true) {
+        var role = member.guild.roles.get(lol[member.guild.id].role);
+        if (!role) return;
+        member.addRole(role);
+    }
+});
 
 
 
