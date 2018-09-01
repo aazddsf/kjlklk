@@ -1928,6 +1928,19 @@ client.on('message', message => {
 
 
 
+const fs = require("fs");
+const lol = JSON.parse(fs.readFileSync("lol.json", "utf8"))
+const client = new Discord.Client();
+var prefix = ".";
+function hi (message, args){
+    var embed = new Discord.RichEmbed()
+    .setAuthor(client.user.username , client.user.avatarURL)
+    .setFooter("All copyrights reseaved. | 2018©")
+    .setColor("RANDOM")
+    .setDescription(args)
+    .setThumbnail(client.user.avatarURL);
+    message.channel.send(embed);
+}
 client.on("message", (message) => {
     var command = message.content.split(" ").join(" ").slice(prefix.length);
     var args = message.content.split(" ");
