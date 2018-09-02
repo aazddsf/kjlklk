@@ -1897,7 +1897,7 @@ const bannedwords = [
   "-s",
   "!invites",
   "!top",
-  "G.play",
+  ".play",
   "G.stop",
   "G.skip",
   "-skip"
