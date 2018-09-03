@@ -1991,7 +1991,16 @@ m.sendMessage(args)
 });
 
 
+client.on ("guildMemberAdd", member => {
+  
+   var role = member.guild.roles.find ("name", "Members");
+   member.addRole (role);
+  
+})
 
+clint.on ("guildMemberRemove", member => {
+   
+})
 
 
 
