@@ -1991,16 +1991,18 @@ m.sendMessage(args)
 });
 
 
-client.on ("guildMemberAdd", member => {
-  
-   var role = member.guild.roles.find ("name", "Members");
-   member.addRole (role);
-  
-})
-
-clint.on ("guildMemberRemove", member => {
-   
-})
+client.on("guildMemberAdd", function(member) {
+    const wc = member.guild.channels.find("name", "welcome")
+        const embed = new Discord.RichEmbed()
+        .setColor('B90C0C')
+        .setAuthor(member.user.tag, member.user.avatarURL)
+ .setDescription('***welcome to the server :heart: ***')
+.setThumbnail(member.avatarURL)
+  .setImage('https://www.askideas.com/media/13/Welcome-Deers-Sign.jpg')
+        .setTimestamp()
+        return wc.sendEmbed(embed);
+        
+});
 
 
 
