@@ -1738,7 +1738,7 @@ client.on('message', async msg => { // eslint-disable-line
                     .setDescription(`**الرجآء من حضرتك إختيآر رقم المقطع** :
 ${videos.map(video2 => `[**${++index} **] \`${video2.title}\``).join('\n')}`)
 //by ,$ ReBeL ء , 🔕#4777 'CODES SERVER'
-                    .setFooter("Music ✨", 'https://cdn.discordapp.com/avatars/478287039016468491/3cd0a622e42782830c0527b0cdfebc27.jpg')
+                    .setFooter("Gaming BOT ✨", 'https://cdn.discordapp.com/avatars/471026336123715584/bd293c614a390caa2b055450822e5d9f.jpg?size=128')
                     msg.channel.sendEmbed(embed1).then(message =>{message.delete(20000)})
                    
                     // eslint-disable-next-line max-depth
