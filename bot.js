@@ -2000,7 +2000,6 @@ m.sendMessage(args)
 
 
 const fs = require('fs');
-const jimp = require('jimp');
 const Canvas = require('canvas');
 
 client.on('guildMemberAdd', member => {
