@@ -1991,32 +1991,12 @@ client.on('message' , async (message) => {
 
 
 
-var memes =["http://www.shuuf.com/shof/uploads/2015/09/09/jpg/shof_b9d73150f90a594.jpg","https://haltaalam.info/wp-content/uploads/2015/05/0.208.png","https://haltaalam.info/wp-content/uploads/2015/05/266.png","https://haltaalam.info/wp-content/uploads/2015/05/250.png","https://haltaalam.info/wp-content/uploads/2017/02/0.2517.png","https://pbs.twimg.com/media/CP0mi02UAAA3U2z.png","http://www.shuuf.com/shof/uploads/2015/08/31/jpg/shof_3b74fa7295ec445.jpg","http://www.shuuf.com/shof/uploads/2015/08/22/jpg/shof_fa3be6ab68fb415.jpg","https://pbs.twimg.com/media/CSWPvmRUcAAeZbt.png","https://pbs.twimg.com/media/B18VworIcAIMGsE.png"]
-client.on('message', message => {
-if(message.content.startsWith(prefix + 'هل تعلم')) {
-     var embed = new Discord.RichEmbed()
-.setImage(memes[Math.floor(Math.random() * memes.length)])
-message.channel.sendEmbed(embed);
-}
-});
 
 
 
 
-client.on('message', message => {
- if (message.content.startsWith(prefix + "صراحة")) {
-     if(!message.channel.guild) return message.reply('** This command only for servers **');
-  var client= new Discord.RichEmbed()
-  .setTitle("لعبة صراحة ..")
-  .setColor('RANDOM')
-  .setDescription(`${Sra7a[Math.floor(Math.random() * Sra7a.length)]}`)
-  .setImage("https://cdn.discordapp.com/attachments/371269161470525444/384103927060234242/125.png")
-                  .setTimestamp()
 
-   message.channel.sendEmbed(client);
-   message.react("??")
- }
-});
+
 
 
 
