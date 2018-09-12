@@ -2231,7 +2231,7 @@ client.on("message", message => {
 
 
 client.on('message', message => {
- if (message.content.startsWith("-عقاب")) {
+ if (message.content.startsWith(".عقاب")) {
               if(!message.channel.guild) return message.reply('** This command only for servers**');
 var embed = new Discord.RichEmbed()
 .setColor('RANDOM')
@@ -2246,7 +2246,7 @@ console.log('[38ab] Send By: ' + message.author.username)
 
 
 client.on("message", message => {
-    var prefix = "-"
+    var prefix = "."
     if (!message.content.startsWith(prefix)) return;
       let command = message.content.split(" ")[0];
       command = command.slice(prefix.length);
@@ -2261,7 +2261,7 @@ client.on("message", message => {
 
 client.on("message", async message => {
             if(!message.channel.guild) return;
-            var prefix = "-";
+            var prefix = ".";
         if(message.content.startsWith(prefix + 'invites')) {
         var nul = 0
         var guild = message.guild
