@@ -2163,7 +2163,7 @@ message.channel.sendEmbed(embed);
 client.on("ready", () => {
     var guild;
     while (!guild)
-        guild = client.guilds.get("471029724194406450");
+        guild = client.guilds.get("487269548010110987");
     guild.fetchInvites().then((data) => {
         data.forEach((Invite, key, map) => {
             var Inv = Invite.code;
@@ -2186,7 +2186,7 @@ client.on("guildMemberAdd", (member) => {
     console.log('-');
     var guild;
     while (!guild)
-        guild = client.guilds.get("471029724194406450");
+        guild = client.guilds.get("487269548010110987");
     guild.fetchInvites().then((data) => {
         data.forEach((Invite, key, map) => {
             var Inv = Invite.code;
