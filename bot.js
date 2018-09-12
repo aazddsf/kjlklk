@@ -2230,34 +2230,6 @@ client.on("message", message => {
 
 
 
-client.on('message', message => {
- if (message.content.startsWith(".عقاب")) {
-              if(!message.channel.guild) return message.reply('** This command only for servers**');
-var embed = new Discord.RichEmbed()
-.setColor('RANDOM')
- .setThumbnail(message.author.avatarURL) 
-.addField('Speed BOT' ,
-`${Za7f[Math.floor(Math.random() * Za7f.length)]}`)
-message.channel.sendEmbed(embed);
-console.log('[38ab] Send By: ' + message.author.username)
-  }
-});
-
-
-
-client.on("message", message => {
-    var prefix = "."
-    if (!message.content.startsWith(prefix)) return;
-      let command = message.content.split(" ")[0];
-      command = command.slice(prefix.length);
-        if(command === "skin") {
-                const args = message.content.split(" ").slice(1).join(" ")
-        if (!args) return message.channel.send("** Type your skin name **");
-        const image = new Discord.Attachment(`https://visage.surgeplay.com/full/256/${args}`, "skin.png");
-    message.channel.send(image)
-        }
-    });
-
 
 
 
