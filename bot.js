@@ -3014,7 +3014,7 @@ const createRichEmbed = (title, description, color, image, footer, thumb) => {
     return genEmbed
 }
  
-const client = new Discord.Client()
+
 const HypixelClient = new HypixelAPI(args[1])
  
 client.on('ready', () => {
