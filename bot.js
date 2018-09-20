@@ -2111,7 +2111,7 @@ const Sra7a = [
 
 
 client.on("message", message => {
-	var prefix = "-";
+	var prefix = ".";
  if (message.content === ".music") {
 	  message.channel.send('**تم ارسالك في الخاص** :mailbox_with_mail: ');
   const embed = new Discord.RichEmbed() 
