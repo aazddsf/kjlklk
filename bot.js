@@ -2970,82 +2970,18 @@ client.on('message', message => {
 
 
 
-client.on('message',async msg => {
-  if(msg.content.startsWith("!stats")) {
-  if(!msg.guild.member(msg.author).hasPermissions('MANAGE_CHANNELS')) return msg.reply('❌ **لا تملك صلاحية**');
-  if(!msg.guild.member(client.user).hasPermissions(['MANAGE_CHANNELS'])) return msg.reply('❌ **البوت لا يمتلك صلاحية**');
-    msg.guild.createChannel(`👑معلومات البوت👌` , 'category')
- 
-       msg.guild.createChannel(`"انتظر قليلا` , 'voice').then(time => {
-    time.overwritePermissions(msg.guild.id, {
-      CONNECT: false,
-      SPEAK: false
-    });
-  setInterval(() => {
-      var currentTime = new Date(),
-Year = currentTime.getFullYear(),  
-Month = currentTime.getMonth() + 1,
-Dat = currentTime.getDate()
-      time.setName(`${client.user.tag}`);
- },1000);
-  });
-  msg.guild.createChannel(`"انتظر قليلا` , 'voice').then(time => {
-    time.overwritePermissions(msg.guild.id, {
-      CONNECT: false,
-      SPEAK: false
-    });
-  setInterval(() => {
-      var currentTime = new Date(),
-Year = currentTime.getFullYear(),
-Month = currentTime.getMonth() + 1,
-Dat = currentTime.getDate()
-      time.setName(`${client.users.size} <-- 『الاعضاء』 `);
- },1000);
-  });
-    msg.guild.createChannel(`"انتظر قليلا` , 'voice').then(time => {
-    time.overwritePermissions(msg.guild.id, {
-      CONNECT: false,
-      SPEAK: false
-    });
-  setInterval(() => {
-      var currentTime = new Date(),
-Year = currentTime.getFullYear(),
-Month = currentTime.getMonth() + 1,
-Dat = currentTime.getDate()
-      time.setName(`${client.channels.size} <-- 『الرومات』 `);
- },1000);
-  });
-    msg.guild.createChannel(`"انتظر قليلا` , 'voice').then(time => {
-    time.overwritePermissions(msg.guild.id, {
-      CONNECT: false,
-      SPEAK: false
-    });
-  setInterval(() => {
-      var currentTime = new Date(),
-Year = currentTime.getFullYear(),
-Month = currentTime.getMonth() + 1,
-Dat = currentTime.getDate()
-      time.setName(`${client.guilds.size} <-- 『السيرفرات』 `);
- },1000);
-  });
-     msg.guild.createChannel(`"انتظر قليلا` , 'voice').then(time => {
-    time.overwritePermissions(msg.guild.id, {
-      CONNECT: false,
-      SPEAK: false
-    });
-  setInterval(() => {
-      var currentTime = new Date(),
-Year = currentTime.getFullYear(),  
-Month = currentTime.getMonth() + 1,
-Dat = currentTime.getDate()
-      time.setName(`${prefix} <-- 『البرفكس』 `);
- },1000);
-  });
-}
+
+
+client.on('guildMemberAdd', member => {
+  member.guild.fetchInvites().then(guildInvites => {
+    const ei = invites[member.guild.id];
+    const invite = guildInvites.find(i => ei.get(i.code).uses < i.uses);
+    const inviter = client.users.get(invite.inviter.id);
+    const stewart = member.guild.channels.find("name", "welcome");
+     stewart.send(`<@${member.user.id}> تمت الدعوه من <@${inviter.id}>`);
+   //  stewart.send(`<@${member.user.id}> joined using invite code ${invite.code} from <@${inviter.id}>. Invite was used ${invite.uses} times since its creation.`);
+  }); 
 });
-
-
-
 
 
 
