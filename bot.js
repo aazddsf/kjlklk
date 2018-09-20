@@ -2986,7 +2986,7 @@ client.on('guildMemberAdd', member => {
 
 
 
-const Discord = require('discord.js')
+
 const HypixelAPI = require('hypixel-api')
 const moment = require('moment')
  
