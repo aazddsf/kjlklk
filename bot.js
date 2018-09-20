@@ -2988,7 +2988,7 @@ client.on('guildMemberAdd', member => {
 
 
 const HypixelAPI = require('hypixel-api')
-const moment = require('moment')
+
  
 const args = process.argv.slice(2)
  
