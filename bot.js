@@ -310,6 +310,8 @@ client.on("message", message => {
 
 🎮『العاب』🎮
 
+🎮.rps
+
 🎮.تهكير
 
 🎮.امثال
