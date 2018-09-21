@@ -62,7 +62,8 @@ client.on("message", message => {
       .setDescription(`
 	  
 	       Help Commands: 
-			 
+
+.help.	⥨  كل الاوامر		
 .help.. ⥨ الاوامر العامة
 .help... ⥨ اوامر الادارة
 .music ⇏ اوامر الموسيقى			 
