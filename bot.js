@@ -1214,22 +1214,33 @@ client.on("guildCreate", guild => {
 
 
 
-client.on('ready', function(){
-    var ms = 10000 ;
-    var setGame = ['In 20 Server','.help .supp| .invite',' 20 Server','.help | .invite','In 20 Server'];
-    var i = -1;
-    var j = 0;
-    setInterval(function (){
-        if( i == -1 ){
-            j = 1;
-        }
-        if( i == (setGame.length)-1 ){
-            j = -1;
-        }
-        i = i+j;
-        client.user.setGame(setGame[i],`http://www.twitch.tv/D.JPEI`);
-    }, ms);
+client.on("ready", async () => {
+    if(client.guilds.size > 1) {
+        client.user.setGame(`.help | Servers : ${client.guilds.size}    `,'https://www.twitch.tv/zinodz05');
+        console.log(`${client.user.username} is online on ${client.guilds.size} servers!`)
+    } else {
+        client.user.setGame(`.help | Servers : ${client.guilds.size}    `,'https://www.twitch.tv/zinodz05');
+        console.log(`${client.user.username} is online on ${client.guilds.size} server!`)
+    }
+    client.user.setStatus("online");
+});
 
+client.on("guildCreate", guild => {
+    console.log("Joined a new guild: " + guild.name);
+    if(client.guilds.size > 1) {
+        client.user.setGame(`.help | Servers : ${client.guilds.size}    `,'https://www.twitch.tv/zinodz05');
+    } else {
+        client.user.setGame(`.help | Servers : ${client.guilds.size}    `,'https://www.twitch.tv/zinodz05');
+    }
+});
+
+client.on("guildDelete", guild => {
+    console.log("Left a guild: " + guild.name);
+    if(client.guilds.size > 1) {
+        client.user.setGame(`.help | Servers : ${client.guilds.size}    `,'https://www.twitch.tv/zinodz05');
+    } else {
+        client.user.setGame(`.help | Servers : ${client.guilds.size}    `,'https://www.twitch.tv/zinodz05');
+    }
 });
 
 
