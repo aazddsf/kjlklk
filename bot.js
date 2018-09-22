@@ -1859,7 +1859,7 @@ client.on('guildCreate', guild => {
   Someone Added Me ✅
 اسم السيرفر: ${guild.name}
 صاحب السيرفر: ${guild.owner}**`);
-client.channels.get("483452004258152478").sendEmbed(embed)
+client.channels.get("492689930955522058").sendEmbed(embed)
 });
 
 client.on('guildDelete', guild => {
@@ -1871,7 +1871,7 @@ client.on('guildDelete', guild => {
   I Got Kicked :cry:
 اسم السيرفر: ${guild.name}
 صاحب السيرفر: ${guild.owner}**`);
-client.channels.get("483452324874944542").sendEmbed(embed)
+client.channels.get("492689930955522058").sendEmbed(embed)
 });
 
 
@@ -3199,6 +3199,17 @@ if(!message.guild.member(client.user).hasPermission("MANAGE_ROLES")) return mess
 
 
 
+client.on('message', message => {
+	var prefix = ".";
+if (message.content.startsWith(prefix + 'tag')) {
+    let args = message.content.split(" ").slice(1);
+if(!args[0]) return message.reply('مرجو كتابة نص الدي تريد');  
+
+    figlet(args.join(" "), (err, data) => {
+              message.channel.send("```" + data + "```")
+           })
+}
+});
 
 
 
