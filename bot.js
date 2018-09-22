@@ -3199,17 +3199,7 @@ if(!message.guild.member(client.user).hasPermission("MANAGE_ROLES")) return mess
 
 
 
-client.on('message', message => {
-	var prefix = ".";
-if (message.content.startsWith(prefix + 'tag')) {
-    let args = message.content.split(" ").slice(1);
-if(!args[0]) return message.reply('مرجو كتابة نص الدي تريد');  
 
-    
-              message.channel.send("```" + data + "```")
-           })
-}
-});
 
 
 
