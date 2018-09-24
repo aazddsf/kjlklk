@@ -3194,6 +3194,18 @@ if(!message.guild.member(client.user).hasPermission("MANAGE_ROLES")) return mess
 
 
 
+client.on('message', async msg => {
+      client.snek = require('snekfetch');
+    var p = "."
+  if(msg.content.startsWith(p + "say")) {
+   let args = msg.content.split(' ').slice(1).join(' ');
+  if(!args) return args.missing(msg, 'No text added', this.help);
+  msg.channel.startTyping();
+  const searchMessage = await msg.channel.send('🖌️Painting...');
+  const { body } = await client.snek.get(`https://nekobot.xyz/api/imagegen?type=clyde&text=${encodeURIComponent(args)}`);
+  msg.channel.send({file: { attachment:body.message, name: 'clyde.png'}}).then(()=> { searchMessage.delete(); msg.channel.stopTyping(); });
+};
+});
 
 
 
