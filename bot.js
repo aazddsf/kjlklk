@@ -3209,6 +3209,15 @@ client.on('message', async msg => {
 
 
 
+client.on("ready", async  => {
+  setInterval(function(){
+  client.channels.find('id', '346454919328432128').setName("M");
+  client.channels.find('id', '346454919328432128').setName("Mu");
+  client.channels.find('id', '346454919328432128').setName("Mus");
+  client.channels.find('id', '346454919328432128').setName("Musi ");
+  client.channels.find('id', '346454919328432128').setName("Music");
+    }, 10000);
+  });
 
 
 
