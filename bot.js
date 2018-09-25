@@ -7,6 +7,7 @@ const fetchVideoInfo = require('youtube-info');
 const YouTube = require('simple-youtube-api');
 const youtube = new YouTube("AIzaSyAdORXg7UZUo7sePv97JyoDqtQVi3Ll0b8");
 const queue = new Map();
+const translate = require('google-translate-api');
 const prefix = '.'
 
 client.on('ready', () => {
@@ -3293,8 +3294,8 @@ message.channel.send(embed)
 client.on('message', message => {
     if (message.content.startsWith(".tg")) {
       
-        const translate = require('google-translate-api');
-        const Discord = require('discord.js');
+        
+        
 
     let toTrans = message.content.split(' ').slice(1);
     let language;
