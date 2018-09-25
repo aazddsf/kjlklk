@@ -7,7 +7,6 @@ const fetchVideoInfo = require('youtube-info');
 const YouTube = require('simple-youtube-api');
 const youtube = new YouTube("AIzaSyAdORXg7UZUo7sePv97JyoDqtQVi3Ll0b8");
 const queue = new Map();
-const translate = require('google-translate-api');
 const prefix = '.'
 
 client.on('ready', () => {
@@ -3291,50 +3290,7 @@ message.channel.send(embed)
 
 });
 
-client.on('message', message => {
-    if (message.content.startsWith(".tg")) {
-      
-        
-        
 
-    let toTrans = message.content.split(' ').slice(1);
-    let language;
-
-    language = toTrans[toTrans.length - 2] === 'to' ? toTrans.slice(toTrans.length - 2, toTrans.length)[1].trim() : undefined;
-    if (!language) {
-        return message.reply(`Please supply valid agruments.\n**Example** \`%tg text to language\``);
-    }
-    let finalToTrans = toTrans.slice(toTrans.length - toTrans.length, toTrans.length - 2).join(' ');
-    translate(finalToTrans, {to: language}).then(res => {
-            message.channel.send({embed: {
-                color: 3447003,
-                author: {
-                  name: 'Dragon\'s translator',
-                  icon_url: client.user.avatarURL
-                },
-                fields: [{
-                    name: "Translator",
-                    value: `**From:** ${res.from.language.iso}\n\`\`\`${finalToTrans}\`\`\`\n**To: **${language}\n\`\`\`${res.text}\`\`\``
-                  }
-                ],
-                timestamp: new Date(),
-                footer: {
-                  icon_url: client.user.avatarURL,
-                  text: "الترجمه"
-                }
-              }
-            });
-    }).catch(err => {
-        message.channel.send({
-            embed: {
-                description: '❌ We could not find the supplied language.',
-                color: 0xE8642B
-              
-            }
-        });
-    });
-    }
-});
 
 
 
