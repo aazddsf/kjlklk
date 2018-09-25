@@ -834,18 +834,23 @@ client.on('message', message => {
 
 
 client.on('message', message => {
+           const embed = new Discord.RichEmbed()
      if (message.content === ".bot") {
-            if(!message.channel.guild) return message.reply('** This command only for servers **');
-     let embed = new Discord.RichEmbed()
-  .setColor("RANDOM")
-  .addField("**عدد السيرفرات الي فيها البوت:**" , client.guilds.size)
-  .addField("**المستخدمين:**", client.users.size)
-  .addField("**قنوات:**", client.channels.size)
-  .setTimestamp()
-message.channel.sendEmbed(embed);
+       message.reply(`تم ارسال المعلومات في الخاص :white_check_mark:`) 
+message.author.send(Gaming Bot" + `  **
+     معلومات عن مطور البوت  
+    :tools:  المطور
+    | Zino|Dev#7318| 
+     :gem:  ~ سيرفر صاحب البوت ~ :gem: 
+    | Gaming Bot|
+    :ledger:لمعرف اوامر البوت:ledger: 
+            تكتب: .help
+           :white_check_mark:رابط اضافة البوت:white_check_mark: : https://discordapp.com/api/oauth2/authorize?client_id=471026336123715584&permissions=8&scope=bot
+            :satellite: رابط سيرفر الدعم الفني:satellite: : https://discord.gg/kFCKtSb 
+    |:heart: #شكرا لإطلاعك على هذه المعلومة#:heart: 
+**`);
     }
-});
-
+}); 
 
 
 client.on('message', message => {
@@ -3209,15 +3214,6 @@ client.on('message', async msg => {
 
 
 
-client.on("ready", async  => {
-  setInterval(function(){
-  client.channels.find('id', '346454919328432128').setName("M");
-  client.channels.find('id', '346454919328432128').setName("Mu");
-  client.channels.find('id', '346454919328432128').setName("Mus");
-  client.channels.find('id', '346454919328432128').setName("Musi ");
-  client.channels.find('id', '346454919328432128').setName("Music");
-    }, 10000);
-  });
 
 
 
