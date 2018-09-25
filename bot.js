@@ -837,12 +837,12 @@ client.on('message', message => {
            const embed = new Discord.RichEmbed()
      if (message.content === ".bot") {
        message.reply(`تم ارسال المعلومات في الخاص :white_check_mark:`) 
-message.author.send(Gaming Bot" + `  **
+message.author.send("Gaming Bot" + `  **
      معلومات عن مطور البوت  
     :tools:  المطور
-    | Zino|Dev#7318| 
+    |Zino|Dev#7318|  
      :gem:  ~ سيرفر صاحب البوت ~ :gem: 
-    | Gaming Bot|
+    | Gaming Bot |
     :ledger:لمعرف اوامر البوت:ledger: 
             تكتب: .help
            :white_check_mark:رابط اضافة البوت:white_check_mark: : https://discordapp.com/api/oauth2/authorize?client_id=471026336123715584&permissions=8&scope=bot
@@ -851,7 +851,6 @@ message.author.send(Gaming Bot" + `  **
 **`);
     }
 }); 
-
 
 client.on('message', message => {
     if (message.content === ".roles") {
@@ -1280,7 +1279,7 @@ var title = args[1]
           if(message.content.startsWith(codes + "start")) {
               if(!message.guild.member(message.author).hasPermission('MANAGE_GUILD')) return message.channel.send(':heavy_multiplication_x:| **s You Dont Have Premission**');
               if(!args) return message.channel.send(`**Use : $start  <Time> <Presentse>**`);
-              if(!title) return message.channel.send(`**Use : **\`^^start ${args[0]} Minutes\`** <Presentse>**`);
+              if(!title) return message.channel.send(`**Use : **\`.start ${args[0]} Minutes\`** <Presentse>**`);
          if(!isNaN(args)) return message.channel.send(':heavy_multiplication_x:| **The Time Be Nambers `` Do the Commend Agin``**');
                            let giveEmbed = new Discord.RichEmbed()
                   .setAuthor(message.guild.name, message.guild.iconURL)
