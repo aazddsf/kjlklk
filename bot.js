@@ -3243,7 +3243,30 @@ var prefix = ".";
 
 
 
+client.on('message', message => {
+var prefix = ".";
+      if(message.content === prefix + "اخفاء") {
+      if(!message.channel.guild) return;
+      if(!message.member.hasPermission('ADMINISTRATOR')) return message.reply('You Dont Have Perms :x:');
+             message.channel.overwritePermissions(message.guild.id, {
+             READ_MESSAGES: false
+ })
+              message.channel.send('تم اخفاء الشات :white_check_mark:  ')
+ }
+});
 
+
+client.on('message', message => {
+var prefix = ".";
+      if(message.content === prefix + "اظهار") {
+      if(!message.channel.guild) return;
+      if(!message.member.hasPermission('ADMINISTRATOR')) return message.reply(':x:');
+             message.channel.overwritePermissions(message.guild.id, {
+             READ_MESSAGES: true
+ })
+              message.channel.send('تم اظهار الشات :white_check_mark:')
+ }
+});
 
 
 
