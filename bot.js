@@ -7,6 +7,10 @@ const fetchVideoInfo = require('youtube-info');
 const YouTube = require('simple-youtube-api');
 const youtube = new YouTube("AIzaSyAdORXg7UZUo7sePv97JyoDqtQVi3Ll0b8");
 const queue = new Map();
+var Canvas = require('canvas')
+var jimp = require('jimp')
+const pretty = require('pretty-ms')
+const rn = require('random-number');
 const prefix = '.'
 
 client.on('ready', () => {
@@ -3559,7 +3563,176 @@ client.on('message', function(message) {
 
 
 
+const w = ['./walls/p1.png'];
+if (!games[getvalueof.id]) games[getvalueof.id] = {wins: 0,loses: 0,points: 0,total: 0,credits: 100,level: 1,};          
+            let Image = Canvas.Image,
+            canvas = new Canvas(300, 300),
+            ctx = canvas.getContext('2d');       
+      fs.readFile(`${dataPro[getvalueof.id].wallSrc}`, function (err, Background) {
+          fs.readFile(`${w[0]}`, function (err, Background) {
+          if (err) return console.log(err);
+          let BG = Canvas.Image;
+          let ground = new Image;
+          ground.src = Background;
+          ctx.drawImage(ground, 0, 0, 297, 305);
+});
+          if (err) return console.log(err);
+          let BG = Canvas.Image;
+          let ground = new Image;
+          ground.src = Background;
+          ctx.drawImage(ground, 0, 0, 300, 305);
+});
 
+
+
+                let url = getvalueof.displayAvatarURL.endsWith(".webp") ? getvalueof.displayAvatarURL.slice(5, -20) + ".png" : getvalueof.displayAvatarURL;
+                jimp.read(url, (err, ava) => {
+                    if (err) return console.log(err);
+                    ava.getBuffer(jimp.MIME_PNG, (err, buf) => {
+                        if (err) return console.log(err);
+                        
+
+                        //Avatar
+                       let Avatar = Canvas.Image;
+                        let ava = new Avatar;
+                        ava.src = buf;
+                     ctx.drawImage(ava, 8, 43, 80, 85); // احداثيات صورتك
+                        
+                        //ur name
+                        ctx.font = 'bold 16px Arial'; // حجم الخط و نوعه
+                        ctx.fontSize = '40px'; // عرض الخط
+                        ctx.fillStyle = "#000000"; // لون الخط
+                        ctx.textAlign = "left"; // محاذا ة النص
+                        ctx.fillText(`${getvalueof.username}`, 130, 125) // احداثيات اسمك          
+
+                         //bord
+                        ctx.font = "regular 12px Cairo" // نوع الخط وحجمه
+                        ctx.fontSize = '50px'; // عرض الخط
+                        ctx.fillStyle = "#f0ff00" // لون الخط    
+                        ctx.textAlign = "left"; // محاذا ة النص
+                        ctx.fillText(`Soon...`, 170, 198) // احداثيات ترتيبك
+                        
+                        //credit
+                        ctx.font = "bold 10px Arial" // نوع الخط وحجمه
+                        ctx.fontSize = '10px'; // عرض الخط
+                        ctx.fillStyle = '#FFFFFF' // لون الخط  
+                        ctx.textAlign = "left"; // محاذا ة النص
+                        ctx.fillText(`$ ${games[getvalueof.id].credits}`, 156, 163) // احداثيات المصاري                        
+                        
+                        //poits
+                        ctx.font = "bold 13px Arial" // ن
+                        ctx.fontSize = '10px'; // عرض الخطوع الخط وحجمه
+                        ctx.fillStyle = "#FFFFFF" // لون الخط 
+                        ctx.textAlign = "left"; // محاذا ة النص
+                        ctx.fillText(`${profile[getvalueof.id].points}`, 173, 182) // احداثيات النقاط
+
+                        //Level
+                        ctx.font = "bold 27px Arial" // نوع الخط و حجمه
+                        ctx.fontSize = '50px'; // عرض الخط
+                        ctx.fillStyle = "#FFFFFF" // لون الخط
+                        ctx.textAlign = "left"; // محاذا ة النص
+                        ctx.fillText(`${profile[getvalueof.id].level}`, 30, 200) // احداثيات اللفل
+                       
+                        //info
+                        ctx.font = "blod 13px Arial" // ن
+                        ctx.fontSize = '10px'; // عرض الخطوع الخط وحجمه
+                        ctx.fillStyle = "#FFFFFF" // لون الخط 
+                        ctx.textAlign = "left"; // محاذا ة النص
+                        ctx.fillText(`${profile[getvalueof.id].info}`, 118, 40) // احداثيات النقاط
+
+                        // REP
+                        ctx.font = "bold 27px Arial";
+                        ctx.fontSize = "100px";
+                        ctx.fillStyle = "#FFFFFF";
+                        ctx.textAlign = "left";
+                        ctx.fillText(`+${profile[getvalueof.id].rep}`, 18,270)
+                      
+message.channel.sendFile(canvas.toBuffer())
+})
+})
+}
+
+});
+
+
+
+
+client.on('guildMemberAdd', member => {
+     const welcomer =  member.guild.channels.find('name', 'welcome');
+    if(!welcomer) return;
+      if(welcomer) {
+         moment.locale('ar-ly');
+         var m = member.user;
+        let yumz = new Discord.RichEmbed()
+        .setColor('RANDOM')
+        .setThumbnail(m.avatarURL)
+        .setAuthor(m.username,m.avatarURL)
+        .addField(': تاريخ دخولك الدسكورد',`${moment(member.user.createdAt).format('D/M/YYYY h:mm a')} **\n** \`${moment(member.user.createdAt).fromNow()}\``,true)            
+      
+         .setFooter(`${m.tag}`,"https://images-ext-2.discordapp.net/external/JpyzxW2wMRG2874gSTdNTpC_q9AHl8x8V4SMmtRtlVk/https/orcid.org/sites/default/files/files/ID_symbol_B-W_128x128.gif")
+     welcomer.send({embed:yumz});          
+         
+    
+
+
+
+const w = ['./w1.png'];
+
+         let Image = Canvas.Image,
+            canvas = new Canvas(400, 200),
+            ctx = canvas.getContext('2d');
+        fs.readFile(`${w[Math.floor(Math.random() * w.length)]}`, function (err, Background) {
+            if (err) return console.log(err);
+            let BG = Canvas.Image;
+            let ground = new Image;
+            ground.src = Background;
+            ctx.drawImage(ground, 0, 0, 400, 200);
+             
+          
+
+                let url = member.user.displayAvatarURL.endsWith(".webp") ? member.user.displayAvatarURL.slice(100) + ".png" : member.user.displayAvatarURL;
+                jimp.read(url, (err, ava) => {
+                    if (err) return console.log(err);
+                    ava.getBuffer(jimp.MIME_PNG, (err, buf) => {
+                        if (err) return console.log(err);
+                        
+                        ctx.font = "bold 12px Arial";
+                        ctx.fontSize = '20px';
+                        ctx.fillStyle = "#f1f1f1";
+                        ctx.textAlign = "center";
+                        ctx.fillText(`welcome to ${member.guild.name}`, 300, 130);
+                        
+                        ctx.font = "bold 12px Arial";
+                        ctx.fontSize = '20px';
+                        ctx.fillStyle = "#f1f1f1";
+                        ctx.textAlign = "center";
+                        ctx.fillText(member.user.username, 200, 150);
+ 
+                let Avatar = Canvas.Image;
+                              let ava = new Avatar;
+                              ava.src = buf;
+                              ctx.beginPath();
+                              ctx.arc(77, 101, 62, 0, Math.PI*2);
+                              ctx.stroke();
+                                 ctx.clip();
+                                 ctx.drawImage(ava, 13, 38, 128, 126);  
+                          
+                
+                             
+welcomer.sendFile(canvas.toBuffer())
+
+
+
+      
+      
+                    }  )  
+      
+                    
+
+})
+      });                    
+ }
+});
 
 
 
