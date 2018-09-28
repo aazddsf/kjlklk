@@ -1862,29 +1862,7 @@ module.exports = (client, message, new_message, player1_id, player2_id, turn_id,
 	
 
 	
-client.on('guildCreate', guild => {
-         const embed = new Discord.RichEmbed()
-     .setColor("RED")
-     .setTitle('Click Here To The Add Bot .!')
-     .setURL('https://discordapp.com/api/oauth2/authorize?client_id=471026336123715584&permissions=8&scope=bot')
-  .setDescription(`**
-  Someone Added Me ✅
-اسم السيرفر: ${guild.name}
-صاحب السيرفر: ${guild.owner}**`);
-client.channels.get("492689930955522058").sendEmbed(embed)
-});
 
-client.on('guildDelete', guild => {
-         const embed = new Discord.RichEmbed()
-     .setColor("GOLD")
-     .setTitle('Click Here To The Add Bot .!')
-     .setURL('https://discordapp.com/api/oauth2/authorize?client_id=471026336123715584&permissions=8&scope=bot')
-  .setDescription(`**
-  I Got Kicked :cry:
-اسم السيرفر: ${guild.name}
-صاحب السيرفر: ${guild.owner}**`);
-client.channels.get("492689930955522058").sendEmbed(embed)
-});
 
 
 	
