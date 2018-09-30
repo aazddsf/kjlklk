@@ -3623,7 +3623,7 @@ message.channel.send(`${user} has **${inviteCount}** invites.`);
 
 
 client.on('message', message => {
-const prefix = '!'	
+const prefix = '.'	
     if(message.content === prefix + 'cc1') {
                          if(!message.channel.guild) return message.channel.send('**This Commnad only For Servers !**'); 
          if(!message.member.hasPermission('ADMINISTRATOR')) return    message.channel.send('**You Dont Have** `ADMINISTRATOR` **premission**').then(msg => msg.delete(6000))
@@ -3894,7 +3894,7 @@ const prefix = '!'
 
 
   client.on('message', msg => {//msg
-    if (msg.content === 'الوان') {
+    if (msg.content === '.الوان') {
       msg.channel.send({file : "https://cdn.pg.sa/1c4R2LijPA.png"})
     }
   });
