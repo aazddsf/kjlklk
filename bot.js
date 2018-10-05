@@ -4015,7 +4015,7 @@ client.on('message', message => {
 
 
 
-var prefix = ".";
+
 var cats = [
 
 "https://static.pexels.com/photos/104827/cat-pet-animal-domestic-104827.jpeg",
