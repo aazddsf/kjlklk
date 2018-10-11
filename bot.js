@@ -4113,9 +4113,10 @@ client.on("message", message => {
 const ms = require('ms'); // npm i ms
 const cool = [];
 client.on('message',async message => {
+ var prefix = "."
   if(message.author.bot) return;
   if(message.channel.type === 'dm') return;
- var prefix = "."
+
 
   const args = message.content.split(' ');
   const credits = {};
