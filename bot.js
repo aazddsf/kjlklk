@@ -4107,12 +4107,7 @@ client.on("message", message => {
 
 
 
-const fs = require('fs'); // npm i fs
-const ms = require('ms'); // npm i ms
-const cool = [];
-hero.on('message',async message => {
-  if(message.author.bot) return;
-  if(message.channel.type === 'dm') return;
+
  
   const args = message.content.split(' ');
   const credits = require('./credits.json');
