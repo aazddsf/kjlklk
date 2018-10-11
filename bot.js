@@ -4115,7 +4115,8 @@ const cool = [];
 client.on('message',async message => {
   if(message.author.bot) return;
   if(message.channel.type === 'dm') return;
- 
+ var prefix = "."
+
   const args = message.content.split(' ');
   const credits = {};
   const mention = message.mentions.users.first() || hero.users.get(args[1]) || message.author;
