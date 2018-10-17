@@ -746,40 +746,23 @@ client.on('message', async message => { // Alpha Codes Server.
 });
 
 
-client.on("message", async message => {
-        if(!message.channel.guild) return;
- var prefix= ".";
-        if(message.content.startsWith(prefix + 'server')) {
-        let guild = message.guild
-        let channel = message.channel
-        let guildicon = guild.icon_url
-        let members = guild.memberCount
-        let bots = guild.members.filter(m => m.user.bot).size
-        let humans = members - bots
-        let allchannels = guild.channels.size
-        let textchannels = guild.channels.filter(e => e.type === "text")
-        let voicechannels = guild.channels.filter(e => e.type === "voice")
-          var embed = new Discord.RichEmbed()
-          .setColor("#000000")
-          .setTitle(`معلومات عن السيرفر`)
-          .setDescription(`معلومات عن : ${guild.name}`)
-          .addField("صاحب السيرفر :", `${guild.owner}`, true)
-          .addField("أيدي السيرفر :", `${guild.id}`, true)
-          .addField("موقع السيرفر :", `${guild.region}`, true)
-          .addField("مستوى حماية السيرفر :", `${guild.verificationLevel}`, true)
-          .addField("عدد الرومات الصوتية :", `${voicechannels.size}`, true)
-          .addField("عدد الرومات الكتابية :", `${textchannels.size}`, true)
-          .addField("عدد اعضاء السيرفر :", `${members}`, true)
-          .addField("عدد البوتات :", `${bots}`, true)
-          .addField("عدد الاشخاص :", `${humans}`, true)
-          .addField("عدد رتب السيرفر :", `${guild.roles.size}`, true)
-          .addField(`أيموجيات الخاصة بالسيرفر : (${guild.emojis.size})`, `- ${guild.emojis.array()}`, true)
-          .setFooter(`تم انشاء هذه السيرفر في: ${guild.createdAt}`)
- 
-       message.channel.send({ embed: embed });
- 
-      }
-    });
+client.on('message',async message => {
+  if(message.content.startsWith(prefix + "server")) {
+    let embed = new Discord.RichEmbed()
+    .setAuthor(message.author.username, message.author.avatarURL)
+    .setTitle(`\`${message.guild.name}\``)
+    .setThumbnail(message.guild.iconURL)
+    .addField('• iD:', `- ${message.guild.id}`,true)
+    .addField('• Owner:', `- ${message.guild.owner}`, true)
+    .addField('• Channels:', `\`#\` ${message.guild.channels.filter(a => a.type === 'text').size} - \`🎤\` ${message.guild.channels.filter(a => a.type === 'voice').size}`, true)
+    .addField('• Members:', `\`Count\` ${message.guild.memberCount} - \`Last\` ${Array.from(message.channel.guild.members.values()).sort((a, b) => b.joinedAt - a.joinedAt).map(m => `${m}`).splice(0, 1)}`, true)
+    .addField('• AFK Channel:', `${message.guild.afkChannel || 'None'}`, true)
+    .addField('• Other:', `\`Roles\` ${message.guild.roles.size} - \`Emojis\` ${message.guild.emojis.size} \`[\` ${message.guild.emojis.map(m => m).join(' **|** ')} \`]\``,true)
+    .addField('• Region:', `${message.guild.region}`, true);
+
+    message.channel.send(embed);
+  }
+});
 
   client.on('message', message => {
     if (message.content === ".rooms") {
@@ -4398,7 +4381,36 @@ client.on('message',async message => {
     });
 
 
+client.on('message',async message => {
+  if(message.author.bot) return;
+  if(message.channel.type === 'dm') return;
+  let args = message.content.split(' ');
+  let tag;
+  if(args[0] === `${prefix}discrim`) {
+    if(args[1]) {
+      let discrim = Array.from(args[1]);
+      if(isNaN(args[1])) return message.channel.send(`- \`${message.author.username}\`, يجب ان تتكون هذه الخانة من ارقام وليس احرف`);
+      if(discrim.length !== 4) return message.channel.send(`- \`${message.author.username}\`, يجب ان يكون التاق مكون من 4 ارقام`);
 
+      tag = discrim.map(r => r.toString()).join('');
+      console.log(tag);
+      if(client.users.filter(f => f.discriminator === tag).size === 0) return message.channel.send(`- \`${message.author.username}\`, لا يوجد احد بهذا التاق`);
+      let iLD = new Discord.RichEmbed()
+      .setAuthor(message.author.username, message.author.avatarURL)
+      .setDescription(client.users.filter(f => f.discriminator === tag).map(r => r.username).slice(0, 10).join('\n'))
+      .setFooter('By: xYouseeF\'₁₁ || Roýale.#0001');
+      message.channel.send(iLD);
+    } else if(!args[1]) {
+      tag = message.author.discriminator;
+      if(client.users.filter(f => f.discriminator === tag).size === 0) return message.channel.send(`- \`${message.author.username}\`, لا يوجد احد بهذا التاق`);
+      let L4U = new Discord.RichEmbed()
+      .setAuthor(message.author.username, message.author.avatarURL)
+      .setDescription(client.users.filter(f => f.discriminator === tag).map(r => r.username).slice(0, 10).join('\n'))
+      .setFooter('By: xYouseeF\'₁₁ || Roýale.#0001');
+      message.channel.send(L4U);
+    }
+  }
+});
 
 
 
