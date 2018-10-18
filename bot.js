@@ -28,7 +28,7 @@ client.on('ready', () => {
   console.log('╚[════════════════════════════════════]╝')
   console.log('')
   console.log('╔[════════════]╗')
-  console.log(' Boot Is Online')
+  console.log(' Bootyy Is Online')
   console.log('╚[════════════]╝')
   console.log('')
   console.log('')
