@@ -4381,7 +4381,10 @@ client.on('message',async message => {
     });
 
 
+message.guild.createChannel("روم مؤقت", 'text').then(c => {
 
+setTimeout(c.delete().catch(e => {}), 2000);
+});
 
 
 
