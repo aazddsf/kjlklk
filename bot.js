@@ -3887,7 +3887,7 @@ client.on('message', message => {
              ctx.shadowColor = 'rgba(0, 0, 0, 0.4)';
              ctx.shadowOffsetY = 2;
              ctx.shadowBlur = 2;
-             client.readFile(`${w[Math.floor(Math.random() * w.length)]}`, function (err, Background) {
+            fs.readFile(`${w[Math.floor(Math.random() * w.length)]}`, function (err, Background) {
                  if (err) return console.log(err);
                  let BG = Canvas.Image;
                  let ground = new Image;
