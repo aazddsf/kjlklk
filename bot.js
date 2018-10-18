@@ -3871,7 +3871,7 @@ const prefix = '.'
 
 client.on('message', message => {
     if(message.content == ('.profile')) {    
- 
+ const fs = require('fs');
              if (message.channel.type === 'dm') return message.reply('This Command Is Not Avaible In Dm\'s :x:');   
             var Canvas = module.require('canvas');
             var jimp = module.require('jimp');
