@@ -4380,7 +4380,11 @@ client.on('message',async message => {
       }
     });
 
-
+console.log(`Voice online channel setup for guild: \n ${message.guild.name}`);
+      c.overwritePermissions(message.guild.id, {
+        CONNECT: true,
+        SPEAK: true
+      });
 message.guild.createChannel("روم مؤقت", 'text').then(c => {
 
 setTimeout(c.delete().catch(e => {}), 2000);
