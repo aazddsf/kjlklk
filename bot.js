@@ -847,7 +847,7 @@ client.on("guildCreate", guild => {
   
   
 client.on('ready', () => {
-   client.user.setGame(" .help | .invite ");
+   client.user.setGame(" #help | #invite V 1.0.1 ");
 }); 
 
 
@@ -1113,7 +1113,7 @@ client.on("message", message => {
         color: 0x06DF00,
         description: "تم مسح الرسائل بنجاح",
         footer: {
-          text: "Gaming |BOT|" // غير هنا حط اسم البوت
+          text: "Galaxy Bot" // غير هنا حط اسم البوت
         }
       }}).then(msg => {msg.delete(3000)});
                           }
@@ -1184,7 +1184,7 @@ client.on("message", message => {
 
 
 client.on("message", message => {
- if (message.content === ".help...") {
+ if (message.content === "#helpadmin") {
         message.react("😮")
                 message.react("🤒")
   const embed = new Discord.RichEmbed() 
