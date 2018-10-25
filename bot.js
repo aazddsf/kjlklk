@@ -33,7 +33,7 @@ client.on('ready', () => {
   console.log('')
   console.log('')
 });
-client.login(process.env.BOT_TOKEN);
+
 
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
