@@ -432,7 +432,7 @@ if (message.content.startsWith("#cv")) {
               
           if(!message.channel.guild) return;
    if(message.author.bot) return;
-      if(message.content === (prefix + "image"){ 
+      if(message.content === prefix + "image"){ 
           const embed = new Discord.RichEmbed()
   
       .setTitle(`This is  ** ${message.guild.name} **  Photo !`)
