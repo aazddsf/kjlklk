@@ -534,24 +534,7 @@ client.on('message',async message => {
 });
 
   
-  const HeRo = new Discord.Client();
-  client.on('message', message => {
-      if (message.content === prefix + "date") {
-          if (!message.channel.guild) return message.reply('** This command only for servers **');  
-          var currentTime = new Date(),
-              Year = currentTime.getFullYear(),
-              Month = currentTime.getMonth() + 1,
-              Day = currentTime.getDate();
-
-              var Date15= new Discord.RichEmbed()
-              .setTitle("**『  Date - التاريخ 』 **")
-              .setColor('RANDOM')
-              .setTimestamp()
-              .setDescription( "『"+ Day + "-" + Month + "-" + Year + "』")
-              .setFooter(`#help to see all bot commands `, 'https://images-ext-1.discordapp.net/external/x-p4BwGofa_z_p9hpV-4hJPcqWh-aWGQzsmI189cDiY/%3Fwidth%3D344%26height%3D344/https/media.discordapp.net/attachments/372444859329544203/372701184055836682/ass.jpg?width=231&height=231')
-               message.channel.sendEmbed(Date15);
-      }
-  });
+ 
 
 
 
