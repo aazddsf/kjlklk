@@ -3845,37 +3845,7 @@ client.on('message', msg => {
  
  
  
-console.log('=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=')
-console.log('         [Wait please .. ]       ')
-console.log('=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=')
-client.on('ready', () => {
-    console.log('')
-    console.log('')
-    console.log('')
-    console.log('')
-    console.log('')
-    console.log('')
-    console.log('')
-    console.log('')
-  console.log('=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=')
-  console.log(`Logged in as [ ${client.user.tag}! ]`);
-  console.log('=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=')
-  console.log('[           BOT IS ONLINE         ]')
-  console.log('=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=')
-  console.log('[        info         ]')
-  console.log('=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=')
-  console.log(`servers! [ " ${client.guilds.size} " ]`);
-  console.log('=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=')
-  console.log(`Users! [ " ${client.users.size} " ]`);
-  console.log('=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=')
-  console.log(`channels! [ " ${client.channels.size} " ]`);
-  console.log('=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=')
-});
- 
- 
-client.on('disconnect', () => console.log('I just disconnected, making sure you know, I will reconnect now...'));
- 
-client.on('reconnecting', () => console.log('I am reconnecting now!'));
+
  
 client.on('message', async msg => { // eslint disable line
     if (msg.author.bot) return undefined;
