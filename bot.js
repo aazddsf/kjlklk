@@ -28,7 +28,7 @@ client.on('ready', () => {
   console.log('╚[════════════════════════════════════]╝')
   console.log('')
   console.log('╔[════════════]╗')
-  console.log(' Wsup boy Is Online')
+  console.log(' Wsu Is Online')
   console.log('╚[════════════]╝')
   console.log('')
   console.log('')
