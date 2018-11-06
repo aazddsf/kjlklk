@@ -3707,53 +3707,6 @@ var mentionned = message.mentions.members.first();
 
 
 
-client.on('message', msg => {
-  if (msg.content === 'هلا') {
-    msg.reply('**هلا فيك :heartpulse:**');
-  }
-});
-
-client.on('message', msg => {
-  if (msg.content === 'brb') {
-    msg.reply('**tyt :heartpulse:**');
-  }
-});
-
-client.on('message', msg => {
-  if (msg.content === 'Brb') {
-    msg.reply('**Tyt :heartpulse:**');
-  }
-});
-
-client.on('message', msg => {
-  if (msg.content === 'BRB') {
-    msg.reply('**Tyt :heartpulse:**');
-  }
-});
-
-client.on('message', msg => {
-  if (msg.content === 'برب') {
-    msg.reply('**Tyt :heartpulse:**');
-  }
-});
-
-client.on('message', msg => {
-  if (msg.content === 'back') {
-    msg.reply('**Welcome Back :heartpulse:**');
-  }
-});
-
-client.on('message', msg => {
-  if (msg.content === 'باك') {
-    msg.reply('**Welcome Back :heartpulse:**');
-  }
-});
-
-client.on('message', msg => {
-  if (msg.content === 'سلام عليكم') {
-    msg.reply('**و عليكم السلام**');
-  }
-});
 
 
 
