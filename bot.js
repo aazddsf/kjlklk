@@ -3883,12 +3883,18 @@ function play(guild, song) {
 
 
 
+client.on('ready',async () => { client.channels.find(ch => ch.id === "507891667148210177" && ch.type === 'voice').join(); });
 
 
 
 
 
-
+client.on("ready", () => {
+  function arabecodes() {
+    client.guilds.get('id server').roles.find("name", "Disco").setColor("RANDOM");
+  }
+  setInterval(arabecodes, 100);
+})
 
 
 
