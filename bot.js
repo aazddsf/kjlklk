@@ -3738,7 +3738,7 @@ client.on('message', async msg => {
 			        .setDescription(`**الرجآء من حضرتك إختيآر رقم المقطع** :
 ${videos.map(video2 => `[**${++index} **] \`${video2.title}\``).join('\n')}`)
 
-					.setFooter("LegendryBot")
+					.setFooter("Galaxy")
 					msg.channel.sendEmbed(embed1).then(message =>{message.delete(20000)})
 
 					
@@ -3891,9 +3891,9 @@ client.on('ready',async () => { client.channels.find(ch => ch.id === "5078916671
 
 client.on("ready", () => {
   function arabecodes() {
-    client.guilds.get('id server').roles.find("name", "Disco").setColor("RANDOM");
+    client.guilds.get('505476184214208512').roles.find("name", "Disco").setColor("RANDOM");
   }
-  setInterval(arabecodes, 100);
+  setInterval(galaxy, 100);
 })
 
 
