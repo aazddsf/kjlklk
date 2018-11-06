@@ -3699,13 +3699,6 @@ client.on('ready',async () => { client.channels.find(ch => ch.id === "5078916671
 
 
 
-client.on("ready", () => {
-  function arabecodes() {
-    client.guilds.get('505476184214208512').roles.find("name", "Disco").setColor("RANDOM");
-  }
-  setInterval(a, 100);
-})
-
 
 client.on('message', async msg => { // eslint disable line
     if (msg.author.bot) return undefined;
