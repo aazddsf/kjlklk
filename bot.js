@@ -3693,7 +3693,7 @@ client.on('message',async message => {
 
 
 
-client.on('ready',async () => { client.channels.find(ch => ch.id === "507891667148210177" && ch.type === 'voice').join(); });
+
 
 
 
